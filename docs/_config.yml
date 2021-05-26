@@ -14,12 +14,12 @@ description: GSoC progress
 # Your name to show in the footer
 author: Chandan Kumar
 
-url: "https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar"
+url: "https://theroboticsclub.github.io"
 baseurl: "/gsoc2021-Chandan_Kumar"
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Home: "https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar"
+  Home: "/"
   About Me: "aboutme"
   Resources:
     - Introduction: "aboutproject"
