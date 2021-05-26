@@ -15,6 +15,7 @@ description: GSoC progress
 author: Chandan Kumar
 
 url: "https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar"
+baseurl: "/gsoc2021-Chandan_Kumar"
 # --- List of links in the navigation bar --- #
 
 navbar-links:
