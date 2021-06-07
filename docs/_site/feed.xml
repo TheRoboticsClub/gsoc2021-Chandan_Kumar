@@ -12,7 +12,7 @@
     
     
       <item>
-        <title>Community Bonding week 2</title>
+        <title>Community Bonding week 2-3</title>
         <description>
           Docker Bind Mount and finalizing Rviz display options - 
           Docker Bind Mount The first step in starting development in a docker container is to use bind mounts or volumes so that the changes in the docker container can be seen without having to rebuild the image. Bind mounts can be used to create side-by-side development environments and also to...

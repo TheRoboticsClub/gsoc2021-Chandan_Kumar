@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Community Bonding week 2
+title: Community Bonding week 2-3
 subtitle: Docker Bind Mount and finalizing Rviz display options
 ---
 
