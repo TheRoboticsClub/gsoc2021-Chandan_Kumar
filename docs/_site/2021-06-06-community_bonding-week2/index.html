@@ -9,13 +9,13 @@
 
   
 
-  <title>GSoC 2021 Blog</title>
+  <title>Community Bonding week 2</title>
 
   
   <meta name="author" content="Chandan Kumar">
   
 
-  <meta name="description" content="All my progress will be updated here">
+  <meta name="description" content="Docker Bind Mount and finalizing Rviz display options">
 
   
 
@@ -74,17 +74,19 @@
 
   
   <meta property="og:site_name" content="GSoC 2021 Blog - Chandan Kumar">
-  <meta property="og:title" content="GSoC 2021 Blog">
-  <meta property="og:description" content="All my progress will be updated here">
+  <meta property="og:title" content="Community Bonding week 2">
+  <meta property="og:description" content="Docker Bind Mount and finalizing Rviz display options">
 
   
   <meta property="og:image" content="http://localhost:4000/gsoc2021-Chandan_Kumar/img/logo.png">
   
 
   
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:4000/gsoc2021-Chandan_Kumar/">
-  <link rel="canonical" href="http://localhost:4000/gsoc2021-Chandan_Kumar/">
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Chandan Kumar">
+  <meta property="og:article:published_time" content="2021-06-06T00:00:00-04:00">
+  <meta property="og:url" content="http://localhost:4000/gsoc2021-Chandan_Kumar/2021-06-06-community_bonding-week2/">
+  <link rel="canonical" href="http://localhost:4000/gsoc2021-Chandan_Kumar/2021-06-06-community_bonding-week2/">
   
 
   
@@ -93,8 +95,8 @@
   <meta name="twitter:site" content="@predator4ai">
   <meta name="twitter:creator" content="@predator4ai">
 
-  <meta property="twitter:title" content="GSoC 2021 Blog">
-  <meta property="twitter:description" content="All my progress will be updated here">
+  <meta property="twitter:title" content="Community Bonding week 2">
+  <meta property="twitter:description" content="Docker Bind Mount and finalizing Rviz display options">
 
   
   <meta name="twitter:image" content="http://localhost:4000/gsoc2021-Chandan_Kumar/img/logo.png">
@@ -166,15 +168,18 @@
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="page-heading">
-          <h1>GSoC 2021 Blog</h1>
+        <div class="post-heading">
+          <h1>Community Bonding week 2</h1>
           
             
-              <hr class="small">
-              <span class="page-subheading">All my progress will be updated here</span>
+              <h2 class="post-subheading">Docker Bind Mount and finalizing Rviz display options</h2>
             
           
 
+          
+            <span class="post-meta">Posted on June 6, 2021</span>
+            
+            
           
         </div>
       </div>
@@ -187,107 +192,125 @@
 
 
 
-<div class=" container-md " role="main">
+<div class=" container-md ">
   <div class="row">
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <h2 id="docker-bind-mount">Docker Bind Mount</h2>
+
+<p>The first step in starting development in a docker container is to use bind mounts or volumes so that the changes in the docker container can be seen without having to rebuild the image. Bind mounts can be used to create side-by-side development environments and also to share data that needs to persist longer than the lifespan of the docker container.</p>
+
+<p>When you use a bind mount, a file or directory on the host machine is mounted into a container. The file or directory is referenced by its absolute path on the host machine. By contrast, when you use a volume, a new directory is created within Docker’s storage directory on the host machine, and Docker manages that directory’s contents.</p>
+
+<p align="center"><img src="../img/types-of-mounts-bind.png" /></p>
+
+<h3 id="warnings-and-errors">Warnings and errors</h3>
+
+<h4 id="ros-gps-key-expiration">ROS GPS Key Expiration</h4>
+
+<p>ROS GPG keys inadvertently expired and caused apt failures for a number of users. A full description of the security breach and the remediation can be found in this <a href="https://discourse.ros.org/t/new-gpg-keys-deployed-for-packages-ros-org/9454">ROS Discourse post</a>.</p>
+
+<p>To fix this issue one will need to update the public key used for ROS apt repositories. To do this for ROS 1 installations you need to run a single command:</p>
+
+<p><code class="highlighter-rouge">curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -</code></p>
+
+<p>A <a href="https://github.com/JdeRobot/RoboticsAcademy/commit/842c0758a856c7119b6435fc8f17907bd17fdab1">commit</a> has been created in order to fix this issue.</p>
+
+<h4 id="rle-exception">RLE Exception</h4>
+
+<p>After successfully mounting the container with my local repository, I discovered that none of the exercises are connecting to the server and following error was displayed:</p>
+
+<p><code class="highlighter-rouge">RLE Exception: [./RoboticsAcademy/exercises/follow_line/web-template/launch/simple_line_follower_ros_headless.launch] is not a launch file name The traceback for the exception was written to the log file</code></p>
+
+<p>After altering the GAZEBO_RESOURCE_PATH and paths in instruction.json, the error was rectified.</p>
+
+<h2 id="gazeboweb-testing">GazeboWeb Testing</h2>
+
+<p>Robotics Academy uses GazeboWeb as a front-end graphical interface to gzserver which provides visualization of the simulation. Gzweb lets you interact with the simulation from the comfort of a web browser. This means cross-platform support, minimal client-side installation, and support for mobile devices.</p>
+
+<p>To learn how Gzweb works, I made a basic webpage, connected it to ROS with rosbridge server, and used the roslibjs package  to drive turtlebot3 around in a circle.  A short video below demonstrates the moving turtlebot after recieving commands from html page.</p>
+
+<p><a href="https://youtu.be/rP4x-JGfC0c"><img src="../img/gzweb_thumbnail.jpg" alt="" /></a></p>
+
+<h2 id="rvizweb-testing">RvizWeb Testing</h2>
+
+<p>Rviz is required for Industrial Robot exercises, and RviWeb is one method for incorporating Rviz into a web page. RVizWeb provides a convenient way of building and launching a web application with features similar to RViz. This <a href="https://github.com/osrf/rvizweb">documentation</a> contains further information on RvizWeb.</p>
+
+<p align="center"><img src="../img/RvizWeb.png" /></p>
+
+<h2 id="using-bullet-for-collision-checking">Using Bullet for Collision Checking</h2>
+
+<p>According to the project proposal, we planned to use bullet for collision checking. Bullet has continuous collision capabilities. This means that it can be guaranteed that no collision occurs during the transition between two discrete robot states with the environment.</p>
+
+<p align="center"><img src="../img/bullet.png" /></p>
+
+<p>Bullet’s only drawback is that it is not compatible with all versions. Bullet is a ROS1-Noetic and ROS2-Foxy. I also discovered that the bullet took a long time to compute the place of collision (much slower than using traditional non-continuous collision). As a result, I feel we can put the process of adding bullets into the industrial robot exercise on hold until we get to Noetic.</p>
+
+      </article>
+
       
 
       
 
+      
+        <!-- Check if any share-links are active -->
 
 
-<div class="posts-list">
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
   
-  <article class="post-preview">
-    
-
-    
-
-    <a href="http://localhost:4000/gsoc2021-Chandan_Kumar/2021-06-06-community_bonding-week2/">
-      <h2 class="post-title">Community Bonding week 2</h2>
-
-      
-        <h3 class="post-subtitle">
-        Docker Bind Mount and finalizing Rviz display options
-        </h3>
-      
+    <a href="https://twitter.com/intent/tweet?text=Community+Bonding+week+2&url=http%3A%2F%2Flocalhost%3A4000%2Fgsoc2021-Chandan_Kumar%2F2021-06-06-community_bonding-week2%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
     </a>
-
-    <p class="post-meta">
-      
-      Posted on June 6, 2021
-    </p>
-
-    
-
-    
-    
-
-    <div class="post-entry">
-      
-      Docker Bind Mount
-
-
-      
-      
-        <a href="http://localhost:4000/gsoc2021-Chandan_Kumar/2021-06-06-community_bonding-week2/" class="post-read-more">[Read&nbsp;More]</a>
-      
-    </div>
-    
-
-    
-
-   </article>
   
-  <article class="post-preview">
-    
 
-    
+  
 
-    <a href="http://localhost:4000/gsoc2021-Chandan_Kumar/2021-05-23-community_bonding-week1/">
-      <h2 class="post-title">Community Bonding week 1</h2>
-
-      
-        <h3 class="post-subtitle">
-        Getting Familiar with Robotics Acadmey/Industrial Robots/Docker
-        </h3>
-      
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgsoc2021-Chandan_Kumar%2F2021-06-06-community_bonding-week2%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
     </a>
-
-    <p class="post-meta">
-      
-      Posted on May 23, 2021
-    </p>
-
-    
-
-    
-    
-
-    <div class="post-entry">
-      
-      Google Summer of Code starts with the Community Bonding period where we get to know about the community and get familiar with the code base and work style.
-
-
-      
-      
-        <a href="http://localhost:4000/gsoc2021-Chandan_Kumar/2021-05-23-community_bonding-week1/" class="post-read-more">[Read&nbsp;More]</a>
-      
-    </div>
-    
-
-    
-
-   </article>
   
-</div>
 
+  
+
+  
+
+</section>
 
 
 
       
 
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/gsoc2021-Chandan_Kumar/2021-05-23-community_bonding-week1/" data-toggle="tooltip" data-placement="top" title="Community Bonding week 1">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
       
+  
+  
+  
+
+  
+
+
+
 
     </div>
   </div>
