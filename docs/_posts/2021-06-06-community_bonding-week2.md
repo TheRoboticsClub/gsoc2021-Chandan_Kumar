@@ -14,7 +14,7 @@ When you use a bind mount, a file or directory on the host machine is mounted in
 
 ### Warnings and errors
 
-#### ROS GPS Key Expiration
+#### ROS GPG Key Expiration
 
 ROS GPG keys inadvertently expired and caused apt failures for a number of users. A full description of the security breach and the remediation can be found in this [ROS Discourse post](https://discourse.ros.org/t/new-gpg-keys-deployed-for-packages-ros-org/9454).
 
