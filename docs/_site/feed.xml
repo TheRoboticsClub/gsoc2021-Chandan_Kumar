@@ -1,37 +1,105 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    
-    <title>GSoC 2021 Blog - Chandan Kumar</title>
-    
-    
-    <description>This website is a virtual proof that I'm awesome</description>
-    
-    <link>http://localhost:4000/gsoc2021-Chandan_Kumar</link>
-    <atom:link href="http://localhost:4000/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/rss+xml" />
-    
-    
-      <item>
-        <title>Community Bonding week 2-3</title>
-        <description>
-          Docker Bind Mount and finalizing Rviz display options - 
-          Docker Bind Mount The first step in starting development in a docker container is to use bind mounts or volumes so that the changes in the docker container can be seen without having to rebuild the image. Bind mounts can be used to create side-by-side development environments and also to...
-        </description>
-        <pubDate>Sun, 06 Jun 2021 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/gsoc2021-Chandan_Kumar/2021-06-06-community_bonding-week2/</link>
-        <guid isPermaLink="true">http://localhost:4000/gsoc2021-Chandan_Kumar/2021-06-06-community_bonding-week2/</guid>
-      </item>
-    
-      <item>
-        <title>Community Bonding week 1</title>
-        <description>
-          Getting Familiar with Robotics Acadmey/Industrial Robots/Docker - 
-          Google Summer of Code starts with the Community Bonding period where we get to know about the community and get familiar with the code base and work style. The first week of community bonding was all about getting familiar with JdeRobt Robotics Acadmey. Currently there are nine exercises that are...
-        </description>
-        <pubDate>Sun, 23 May 2021 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000/gsoc2021-Chandan_Kumar/2021-05-23-community_bonding-week1/</link>
-        <guid isPermaLink="true">http://localhost:4000/gsoc2021-Chandan_Kumar/2021-05-23-community_bonding-week1/</guid>
-      </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-06-12T20:20:14+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">Week 1</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/12/week-1.html" rel="alternate" type="text/html" title="Week 1" /><published>2021-06-12T00:00:00+05:30</published><updated>2021-06-12T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/12/week-1</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/12/week-1.html">&lt;h2 id=&quot;pyqt5-gui&quot;&gt;PyQt5 GUI&lt;/h2&gt;
+
+&lt;p&gt;This is the first week of coding period, so I started with designing UI for the web-templates. I began by making a simple PyQt5 GUI for a pick-and-place exercise.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pypi.org/project/PyQt5/&quot;&gt;PyQt5&lt;/a&gt; is a comprehensive set of Python bindings for Qt v5. It is implemented as more than 35 extension modules and enables Python to be used as an alternative application development language to C++ on all supported platforms including iOS and Android.&lt;/p&gt;
+
+&lt;p&gt;Since the pick and place exercise necessitates heavy use of Gazebo and Rviz, I positioned their displays side by side so that users would not experience difficulty scrolling or changing tabs. The basic design of a GUI is seen in the figure below.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/vW8PW_aGAPuWcyc9iP54UJWEiwo8LLA3Pwau2UFR1WNQwb9VnXAl5NGvkSTXJ7yw0SvzdgA1bY5U2gzsiH-rQDY59dze8Xq73ww_h_dHnY2Ic9cSKAbx0_J5qJLxuBq0Q-dzRj3Zxk44icgi4oD1MMULe2kIOvcTNHxY-rUwH8qU2XaqWFre9pMJ0A8CjFrfjUUJ0fRIXmQEg3J2XvgT2WcceKXPB4vXPrjRr2ekQs5SU9DbzZvV6yHuqWx9np4RFGPq_0Alg5tg_Adj3EkcAF3Vr-cDNN1aPE5SSZIIeHG7M6q_gSljcpvqgLRlXwodhWqUj8mgmIe9L5l2kyGkM6MXQp-NpfeoYW00l71v3WjW_LqhJVgz2P2Vcffxij5Q0XQibJDcyaVqsuCfcvqosKAHhc0wbIUm32xnjFvEk32Wba4BtUwJlZvgAI2nyxK4Iw2CINNUHnVBtW8VHCsv125S3Fo2AuhWNMKNLY1aYbsDC3XIbCW66NpT8truCh3ZbB2v278SMqn-Y3K9FMSwDuqXFPk258zaCjAunquOk5Z5snrZjVkeUXXcJKsevJz-t_uZabWzRU8RWWeb60DmVsa6Eu1JZCmZexAj7KAKrzKmlwhI03pq1HXWDZ0D8l3PuGvxwACDLcL7qn_TJp7WY0AGcZSTgJhEeuzxmpSvhKi-szlHMWjw0KJz4PtHtlDZzWZHk8rn-IVskVT1yCZYnF0=w1093-h838-no?authuser=0&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Since Robotics Academy has shifted to web-templates, we will no longer be working on PyQt5 GUIs and will instead focus on improving the web-templates of current exercises.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-cards-for-pick-and-place-exercise&quot;&gt;Adding cards for pick and place exercise&lt;/h2&gt;
+
+&lt;p&gt;To include a new exercise, one needs to add the folder with the exercise contents in exercises/static/exercises following the file name conventions. Then, create the entry in db.sqlite3. A simple way to do this is by using the Django admin page:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run python3.8 manage.py runserver.&lt;/li&gt;
+  &lt;li&gt;Access http://127.0.0.1:8000/admin/ on a browser and log in with “user” and “pass”.&lt;/li&gt;
+  &lt;li&gt;Click on “add exercise” and fill the fields: exercise id (folder name), name (name to display), state, language and description (description to display). Save and exit.&lt;/li&gt;
+  &lt;li&gt;Commit db.sqlite3 changes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;user-interface-for-pick-and-place-exercise&quot;&gt;User Interface for pick and place exercise&lt;/h2&gt;
+
+&lt;p&gt;After creating a card for pick and place, I started working on User Interface of the exercise. As already mentioned, this exercise relies heavily on Rviz and Gazebo and does not require use of any additional widgets.&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="PyQt5" /><category term="Frontend" /><category term="UI/UX" /><summary type="html">PyQt5 GUI</summary></entry><entry><title type="html">Community Bonding Week 2-3</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/06/06/community-bonding-week-2-3.html" rel="alternate" type="text/html" title="Community Bonding Week 2-3" /><published>2021-06-06T00:00:00+05:30</published><updated>2021-06-06T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/06/06/community-bonding-week-2-3</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/06/06/community-bonding-week-2-3.html">&lt;h2 id=&quot;docker-bind-mount&quot;&gt;Docker Bind Mount&lt;/h2&gt;
+
+&lt;p&gt;The first step in starting development in a docker container is to use bind mounts or volumes so that the changes in the docker container can be seen without having to rebuild the image. Bind mounts can be used to create side-by-side development environments and also to share data that needs to persist longer than the lifespan of the docker container.&lt;/p&gt;
+
+&lt;p&gt;When you use a bind mount, a file or directory on the host machine is mounted into a container. The file or directory is referenced by its absolute path on the host machine. By contrast, when you use a volume, a new directory is created within Docker’s storage directory on the host machine, and Docker manages that directory’s contents.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://docs.docker.com/storage/images/types-of-mounts-volume.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;warnings-and-errors&quot;&gt;Warnings and errors&lt;/h3&gt;
+
+&lt;h4 id=&quot;ros-gpg-key-expiration&quot;&gt;ROS GPG Key Expiration&lt;/h4&gt;
+
+&lt;p&gt;ROS GPG keys inadvertently expired and caused apt failures for a number of users. A full description of the security breach and the remediation can be found in this &lt;a href=&quot;https://discourse.ros.org/t/new-gpg-keys-deployed-for-packages-ros-org/9454&quot;&gt;ROS Discourse post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To fix this issue one will need to update the public key used for ROS apt repositories. To do this for ROS 1 installations you need to run a single command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&quot;https://github.com/JdeRobot/RoboticsAcademy/commit/842c0758a856c7119b6435fc8f17907bd17fdab1&quot;&gt;commit&lt;/a&gt; has been created in order to fix this issue.&lt;/p&gt;
+
+&lt;h4 id=&quot;rle-exception&quot;&gt;RLE Exception&lt;/h4&gt;
+
+&lt;p&gt;After successfully mounting the container with my local repository, I discovered that none of the exercises are connecting to the server and following error was displayed:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RLE Exception: [./RoboticsAcademy/exercises/follow_line/web-template/launch/simple_line_follower_ros_headless.launch] is not a launch file name The traceback for the exception was written to the log file&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After altering the GAZEBO_RESOURCE_PATH and paths in instruction.json, the error was rectified.&lt;/p&gt;
+
+&lt;h2 id=&quot;gazeboweb-testing&quot;&gt;GazeboWeb Testing&lt;/h2&gt;
+
+&lt;p&gt;Robotics Academy uses GazeboWeb as a front-end graphical interface to gzserver which provides visualization of the simulation. Gzweb lets you interact with the simulation from the comfort of a web browser. This means cross-platform support, minimal client-side installation, and support for mobile devices.&lt;/p&gt;
+
+&lt;p&gt;To learn how Gzweb works, I made a basic webpage, connected it to ROS with rosbridge server, and used the roslibjs package  to drive turtlebot3 around in a circle.  A short video below demonstrates the moving turtlebot after recieving commands from html page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://youtu.be/rP4x-JGfC0c&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;rvizweb-testing&quot;&gt;RvizWeb Testing&lt;/h2&gt;
+
+&lt;p&gt;Rviz is required for Industrial Robot exercises, and RviWeb is one method for incorporating Rviz into a web page. RVizWeb provides a convenient way of building and launching a web application with features similar to RViz. This &lt;a href=&quot;https://github.com/osrf/rvizweb&quot;&gt;documentation&lt;/a&gt; contains further information on RvizWeb.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/3C_RFxIe0YD038mqlItSh8OlaAEvjsEqEL8HuHbl2XUPn0Ia1RmUd7yJlAjGDHWh7jbo6Iaieu9uM2Dm5qulk_nXJYplXrbXyg_67eCke-bEcU6TB-Ba8tya94xpCW8PcTXoolsIJ6KcbMoa6P22mdZUm05LqjbPiJ9ZDfO76Zq5GkAnwWJy78GoAobItslhscmz0Jl18Z2Pq2avg5NX0JVDXO8f6CiMaLI3WcDcaMNr3Zxw2oHjUKLUZsPDBy7puxeYxYOSirit_o7OYXPfMar4kBTu2LFBwVGst_yiaIJl2g9CuCL8pwufHx0oMpfvYVTRXLeq_uuQ22YPV952v3_ZCfC0HCBYOkStj-RDlwmnHvn7YcLRx5Oii0gnTW-i5OZzVrmp3fySIfEgIKHfw2hQuhm-QqlqBB4xza015i-MOunVxNgsQMUxiUsMlFpnDqbaLwUGNcGHGF5210l_ijwb0SgaGSv4qMfaL4vzJ4sJMuUVXCQwIHoXu9S7CvMNWNIXV9bAfDLKt29NoN2HBEGuf2VpjVsy5dX6rBpUM-qXJCuqoJGhW-esLrEY0J1pj0PKlpO7QyTOo_gjDKpxxaIQy7_vUlzeRmztAaZOL6Fo-aPolDw8Bu8D-el37elBSkLfCALXhCv3I57I4JazhZTJNO_ovmhJkx305vKleuDKXjYzS6qqRIW9jqIFkxRaFJrN_335FgaNZI0xU7Lgzks=w1477-h830-no?authuser=0&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;using-bullet-for-collision-checking&quot;&gt;Using Bullet for Collision Checking&lt;/h2&gt;
+
+&lt;p&gt;According to the project proposal, we planned to use bullet for collision checking. Bullet has continuous collision capabilities. This means that it can be guaranteed that no collision occurs during the transition between two discrete robot states with the environment.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/RqqVC1F_ckEQjFGbrMxM8pejX-04uICab4NrQ2nF7hQNPYiGYMVmIlQIDG7Q8ZQrxnroydZTUfTbXsKji4jYwEkUK4Zk8CpQ8QBg_4pAIGt22m9puTW0zK7XL63XoMIkSQ50-PNZjqsZpFXKzOT-MX3Y5H9n5wpkyeopGucEbVC-qG0hSsKMV-mnVdZ58MejrZkNc3GxFTxKwx0qZBkS27PPLb9nLcgUCLtlLb8v7FC_3U73T-BXP9rKvWL_DxuJ_oA_heqgLmdqClozC57R9WEgw8RitvtIxt1KkW8aoxS1mz0KeLhKORFOcF6nDxYbSgVIP50CzK51gEhmRDZ_en0fWvzvZxIMCTFOoI-VdGgiWuwGMX096P-Ju7ASi3eCrBwLGLG1ThruiA_KnpzQofqWi54jZ8KYLSUiBeG7jD9olsk_pY52utvw3TN0gY7xcByS4HpzSX61JjED3F8L-KEMw_VHipplto9VrDbhy_gDbTuzl9IVJ8m38Z7vwsJurME6uQ8v99mzELPBy43RMgKOalt9FqY0_bW0FEkvhH8OUlcUef-tyo4aJRRVNOOjszmppyGeWhVpw0PSqF5WxEZQohYvBUfRpspC8gX7U4gpb58jJ_aCShyrs57swtsKURl7ValitwxCZZ1XgjQK-kVbLFQsN9IgaA1jOZSdc3Z1O9pmZXig0rEfrNMzTqKxjaYP6Zpx6rE34mp4qmJmuj4=w1477-h830-no?authuser=0&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bullet’s only drawback is that it is not compatible with all versions. Bullet is a ROS1-Noetic and ROS2-Foxy. I also discovered that the bullet took a long time to compute the place of collision (much slower than using traditional non-continuous collision). As a result, I feel we can put the process of adding bullets into the industrial robot exercise on hold until we get to Noetic.&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="community bonding" /><category term="docker" /><category term="Rvizweb" /><category term="Gzweb" /><summary type="html">Docker Bind Mount</summary></entry><entry><title type="html">Community Bonding - Week 1</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/05/23/community-bonding-week-1.html" rel="alternate" type="text/html" title="Community Bonding - Week 1" /><published>2021-05-23T00:00:00+05:30</published><updated>2021-05-23T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/05/23/community-bonding-week-1</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/05/23/community-bonding-week-1.html">&lt;p&gt;Google Summer of Code starts with the Community Bonding period where we get to know about the community and get familiar with the code base and work style.&lt;/p&gt;
+
+&lt;p&gt;The first week of community bonding was all about getting familiar with JdeRobt Robotics Acadmey. Currently there are nine exercises that are updated in v2.3. The primary goal of this project is to add add three more exercises that are pick and place, machine vision and mobile manipulation exercise.&lt;/p&gt;
+
+&lt;h2 id=&quot;pick-and-place&quot;&gt;Pick And Place&lt;/h2&gt;
+
+&lt;p&gt;The goal of this exercise is to learn the underlying infrastructure of Industrial Robot exercises(ROS + MoveIt + our own industrial robotics API) and get familiar with the key components needed for more complex exercises by completing the task of pick and place multiple objects and classify them by color or shape. Link to the &lt;a href=&quot;http://jderobot.github.io/RoboticsAcademy/exercises/IndustrialRobots/pick_place&quot;&gt;exercise&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;machine-vision&quot;&gt;Machine Vision&lt;/h2&gt;
+
+&lt;p&gt;The goal of this exercise is to learn how to use vision to assist industrial robot by detecting known objects and unknown obstacles. The shape, size and color of the objects are known, but the pose of them and the situation of obstacles in surrounding environment need to be found using two cameras. Link to the &lt;a href=&quot;http://jderobot.github.io/RoboticsAcademy/exercises/IndustrialRobots/machine_vision&quot;&gt;exercise&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;mobile-manipulation&quot;&gt;Mobile Manipulation&lt;/h2&gt;
+
+&lt;p&gt;The goal of this exercise is to practice integrating navigation and manipulation. You will need to use a mobile manipulator(AGV+robot arm+gripper) to pick objects on one conveyor and place them on three other conveyors. Link to the &lt;a href=&quot;http://jderobot.github.io/RoboticsAcademy/exercises/IndustrialRobots/mobile_manipulation&quot;&gt;exercise&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;getting-familiar-with-the-web-template-and-docker&quot;&gt;Getting familiar with the web-template and docker&lt;/h1&gt;
+
+&lt;p&gt;Ros is very specific to the versions of operating systems, packages and other dependencies. This is why it becomes difficult for a beginner to start off with the project. The installation has been greatly simplified, as all the required dependencies are already pre-installed in the &lt;a href=&quot;https://hub.docker.com/r/jderobot/robotics-academy&quot;&gt;Robotics-Academy Docker Image&lt;/a&gt;. Robotics Academy (2.3 release) supports Linux (Ubuntu 18.04, 20.04 and other distributions), MacOS and Windows.&lt;/p&gt;
+
+&lt;h2 id=&quot;docker&quot;&gt;Docker&lt;/h2&gt;
+
+&lt;p&gt;Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. More in the &lt;a href=&quot;https://docs.docker.com/get-started/&quot;&gt;documentaion&lt;/a&gt; of Docker&lt;/p&gt;
+
+&lt;h2 id=&quot;migration-of-industrial-robots-repository-to-current-radi&quot;&gt;Migration of Industrial Robots Repository to current RADI&lt;/h2&gt;
+
+&lt;p&gt;The sole purpose of this task was to get familiarized with the structure of Robotics Academy Docker Image(RADI) and understand how to work with docker.&lt;/p&gt;
+
+&lt;h3 id=&quot;warnings-and-errors&quot;&gt;Warnings and Errors&lt;/h3&gt;
+
+&lt;p&gt;As Robotics Acadmey is using multi stage build which uses a build.sh script to automate the whole process, one small error occured which was due to limited permissions given while executing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./build.sh &amp;lt;tag&amp;gt;&lt;/code&gt;
+This can be easily resolved using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bash ./build.sh&lt;/code&gt;.&lt;/p&gt;</content><author><name>Chandan</name></author><category term="community bonding" /><category term="docker" /><category term="exercises" /><summary type="html">Google Summer of Code starts with the Community Bonding period where we get to know about the community and get familiar with the code base and work style.</summary></entry></feed>
