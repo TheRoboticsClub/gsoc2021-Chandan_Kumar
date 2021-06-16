@@ -1,4 +1,4 @@
-I"Í<h2 id="docker-bind-mount">Docker Bind Mount</h2>
+I"É<h2 id="docker-bind-mount">Docker Bind Mount</h2>
 
 <p>The first step in starting development in a docker container is to use bind mounts or volumes so that the changes in the docker container can be seen without having to rebuild the image. Bind mounts can be used to create side-by-side development environments and also to share data that needs to persist longer than the lifespan of the docker container.</p>
 
@@ -32,7 +32,7 @@
 
 <p>To learn how Gzweb works, I made a basic webpage, connected it to ROS with rosbridge server, and used the roslibjs package  to drive turtlebot3 around in a circle.  A short video below demonstrates the moving turtlebot after recieving commands from html page.</p>
 
-<p><img src="https://youtu.be/rP4x-JGfC0c" alt="" /></p>
+<p align="center"><img src="../img/gzgif.gif" /></p>
 
 <h2 id="rvizweb-testing">RvizWeb Testing</h2>
 

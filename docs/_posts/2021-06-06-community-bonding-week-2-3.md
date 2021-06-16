@@ -40,8 +40,7 @@ Robotics Academy uses GazeboWeb as a front-end graphical interface to gzserver w
 
 To learn how Gzweb works, I made a basic webpage, connected it to ROS with rosbridge server, and used the roslibjs package  to drive turtlebot3 around in a circle.  A short video below demonstrates the moving turtlebot after recieving commands from html page.
 
-![](https://youtu.be/rP4x-JGfC0c)
-
+<p align="center"><img src="https://lh3.googleusercontent.com/OeIUv2RfDsURUvdcR9ojQEpCPRSWOIiE2lpwqOqH6frcVf0Bmz5utv6MeMOFW2coihkK5X8Nxe7kd-mtl-4di16d7tWgp_WTDPuSD4TBRdTmM8pXSgpRYyIyuDUh2RZMjV5J4hUuLdnc0wknr6aNZvfOQPcO7ycKoVcthp_OnLdlvNz40DCrEpZgOkV511ZtIfO7Chz5nUMykFql8CMLXc134C7YENwSKo8hM_mJzgIfOLBlXJZCwn4rdjHXYuMaG4Y8hMQV6droGe4LCaybPo18PDF9PHyXtXg5CpRFoocgZA3pyD4HveVvfVqXk59wgzIzw1qOBT5BFr-5jdBEMBt4-fgYpWKgygxSLzj8w4pthvm7vhzmEk46geQof1d4SFQvNmxXJrfkkAXxHQ9GyRcx9IX-o5-9Om39ktTbnCxfIk6J3Zxre0xzeD91akcSKqZL52h7byPjH1OFiwojT8Vail2q0ZJGnu0NQE1Ah220dScrQmK15x4Cfoypp5lUV2xt1GORM-3cca_U5M9_LXMm3gEb1Xf0cQb8V3g4OH9aH8e0yTSgGNTJmTO1u1szsVvxG2TfrnffBRF8QYV1vN3utemu0IMILzNRMVTzH-Ir8d0VNGV9hkDGPSj0w3O4heGRTjKiJ8hcnueaX2cwzRl1PQL0N6emje8-qpomnz9yc3nfMTp1Q3PTCaOt1Bzs2cIcjRFZ8u54cNeWRYhC1kc=w600-h338-no?authuser=0"></p>
 
 ## RvizWeb Testing
 
