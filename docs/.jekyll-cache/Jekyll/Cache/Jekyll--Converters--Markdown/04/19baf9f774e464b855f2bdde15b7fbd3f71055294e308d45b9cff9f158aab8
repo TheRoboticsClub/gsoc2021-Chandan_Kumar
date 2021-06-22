@@ -1,0 +1,10 @@
+I"<h2 id="version-control">Version Control</h2>
+
+<p>This week didn’t started the way I thought off but taught me a great lesson of importance of version control! As I was working on adding gazebo to the exercise. I noticed that the existing exercises weren’t connecting. It seems that those were having problems.</p>
+
+<h2 id="set-up-automated-build-in-docker-hub">Set Up Automated Build in Docker Hub</h2>
+
+<p>Following discussions with mentors, we decided to use automated build for the industrial robots repo, so that the Docker hub can automatically generate images from source code in the pick &amp; place branch and push the finalized image to the Docker repo.</p>
+
+<p>Others will be able to readily access the images with the most recent modifications in the exercise.</p>
+:ET

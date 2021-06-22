@@ -1,0 +1,14 @@
+I"'	<h2 id="version-control">Version Control</h2>
+
+<p>This week didn’t start out the way I had planned, but it did teach me a valuable lesson about the significance of version control! I was working on adding gazebo to the exercise when I came upon this. I realised that the existing exercises didn’t seem to work properly. The reason for this is yet unknown, although it was most likely caused by two or more exercises requesting the same port in the websocket server. And things became even worse when I realised I hadn’t been committing to my changes for a few days. As a result, I had to restart the work from the begining.</p>
+
+<p>As I was going through the process of creating a new exercise, I figured out the solution for the problems that we were having with exercise connectivity and dockerfile. Previously, when I mounted the container’s repository with a local repository, the exercises weren’t unable to connect. The reason for this was due to the change in structure of repository caused by usage of <code class="language-plaintext highlighter-rouge">RUN rsync -a --exclude 'ace-builds' /RoboticsAcademy/exercises/static/exercises/* /RoboticsAcademy/exercises</code> command used in the dockerfile. A temproary solution which I earlier went with was to change the path of each exercise manually in the <a href="https://github.com/JdeRobot/RoboticsAcademy/blob/master/scripts/instructions.json">instructions.json</a> but this might create merge conflicts. A better way of resolving this is to just use the same rync command after bind mount in the local repository. This will change the directory structure according to the paths in the instruction.json file. The same command can be used after the exercise has been created to structure  according to the original repository.</p>
+
+<h2 id="created-a-launch-file-for-gazebo">Created a launch file for Gazebo</h2>
+
+<h2 id="set-up-automated-build-in-docker-hub">Set Up Automated Build in Docker Hub</h2>
+
+<p>Following discussions with mentors, we decided to use automated build for the industrial robots repo, so that the Docker hub can automatically generate images from source code in the pick &amp; place branch and push the finalized image to the Docker repo.</p>
+
+<p>Others will be able to readily access the images with the most recent modifications in the exercise.</p>
+:ET
