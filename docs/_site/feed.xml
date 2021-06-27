@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-06-22T21:23:46+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">Week 2</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/20/week-2.html" rel="alternate" type="text/html" title="Week 2" /><published>2021-06-20T00:00:00+05:30</published><updated>2021-06-20T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/20/week-2</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/20/week-2.html">&lt;h2 id=&quot;version-control&quot;&gt;Version Control&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-06-27T17:58:33+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">Week 3</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/27/week-3.html" rel="alternate" type="text/html" title="Week 3" /><published>2021-06-27T00:00:00+05:30</published><updated>2021-06-27T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/27/week-3</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/27/week-3.html">&lt;h2 id=&quot;apis&quot;&gt;APIs&lt;/h2&gt;
+
+&lt;p&gt;Robotics Academy is a web-based learning platform for robotics that abstracts other ROS operations. It accomplishes this by utilising APIs that handle all of the work behind the scenes. There are three types of APIs defined: GUI, HAL, and ENV. The details of these APIs are covered in the following sections.&lt;/p&gt;
+
+&lt;h3 id=&quot;hal&quot;&gt;HAL&lt;/h3&gt;
+
+&lt;p&gt;HAL(Hardware Abstraction Layer) APIs are used to interact with robot which means one can send commands to different parts of robot using these APIs. Pick and Place exercise requires the following HAL APIs:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;move_pose_arm(pose_goal) : Command the robot with Pose message to make its end effector frame move to the desired pose with inverse kinematics.&lt;/li&gt;
+  &lt;li&gt;move_joint_arm(joint_0,joint_1,joint_2,joint_3,joint_4,joint_5) : Command the robot joints to move to desired joints value&lt;/li&gt;
+  &lt;li&gt;move_joint_hand(joint_value) : Command the gripper joint to move to desired joint value.&lt;/li&gt;
+  &lt;li&gt;back_to_home() : Command the robot arm and gripper to move back to the home pose.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;env&quot;&gt;ENV&lt;/h3&gt;
+
+&lt;p&gt;ENV APIs are used to get the information about the objects present in the world/enviornment. These APIs also containes the helper functions that are useful to complete the exercise.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;get_object_list() : Return the name list of all objects.&lt;/li&gt;
+  &lt;li&gt;get_object_pose(object_name) : Return the pose of the object.&lt;/li&gt;
+  &lt;li&gt;get_object_info(object_name) : Return the pose, height, width, length, shape, color of the object in order.&lt;/li&gt;
+  &lt;li&gt;get_target_list() : Return the name list of all targets.&lt;/li&gt;
+  &lt;li&gt;get_target_position(target_name) : Return the position of target where we are going to place the objects.&lt;/li&gt;
+  &lt;li&gt;pose2msg(roll, pitch, yaw, x, y, z) : Convert pose to Pose message. The unit of roll, pitch, yaw is radian.&lt;/li&gt;
+  &lt;li&gt;msg2pose(pose) : Convert Pose message to pose, return roll, pitch, yaw, x, y, z in order. The unit of roll, pitch, yaw is radian.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since in the process of connecting the exercises, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;manager.py&lt;/code&gt; checks through these APIs, so I thought of creating them in the begining of this week. Also, this exercise doesn’t need GUI so there is no need of GUI APIs but &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GUI.py&lt;/code&gt; contains some functions related to threads that I’m still not sure about and they could be contributing to the connection of exercises. As a result, I’ve temporarily replaced &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GUI.py&lt;/code&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ENV.py&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;gazebo-path-errors&quot;&gt;Gazebo path errors&lt;/h2&gt;
+
+&lt;p&gt;Following the creation of the APIs, I moved on to connecting the exercise to the server. I tried to connect after making some changes to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exercise.py&lt;/code&gt;, but I came across a very unpleasant problem. The compiller wasn’t able to identify “pick_place” key in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;instructions.json&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gazebo_path = self.GAZEBO_RESOURCE_PATH + self.instructions[exercise][&quot;gazebo_path&quot;] + &quot;;&quot;
+KeyError: 'pick_place'
+_XSERVTransmkdir: ERROR: Cannot create /tmp/.X11-unix
+_XSERVTransSocketUNIXCreateListener: mkdir(/tmp/.X11-unix) failed, errno = 17
+_XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It appears to be very simple problem where one just needs to add the paths in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;instructions.json&lt;/code&gt; but the problem was that I added the paths right from the start.&lt;/p&gt;
+
+&lt;p&gt;I was finally able to figure out the problem after a lot of testing. Actually, the compiler wasn’t compiling the code I edited; instead, it made a copy of manager.py and instructions.json in the root directory, which it then executed. The changes in my local repository didn’t effect other files because I mounted it with the RoboticsAcademy repository in the container. So, in the end, I updated the root directory’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;instructions.json&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;radi-23-or-242&quot;&gt;RADI 2.3 or 2.4.2&lt;/h2&gt;
+
+&lt;p&gt;After resolving some more XML errors, I ran into another major error. ROS wasn’t able to find the Industrial Robots packages cloned in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/opt/jderobot&lt;/code&gt; along with Custom Robots directory.  I tried changing the ROS PACKAGE PATH variable, but it didn’t help. I decided to put these packages in a catkin workspace after browsing the internet for a bit. However, there was no catkin workspace in RADI2.3, but there is in RADI2.4. So I had the option of creating a catkin workspace or upgrading to RADI2.4.2. I decided to use RADI2.4.2 after consulting with my mentor. I successfully moved on to RADI2.4.2 after making few adjustments in Dockerfile2.4.2 and manager.py.&lt;/p&gt;
+
+&lt;p&gt;Finally, up until debugging level 4, the exercise was able to connect (simulation started and code and gui websockets opened). The gazebo was operational, and all of the objects, including the robot, were properly spawned.&lt;/p&gt;
+
+&lt;p&gt;[]&lt;/p&gt;
+
+&lt;p&gt;Although the gazebo is working, there are still some warnings and errors which are needed to be resolved.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Err] [ModelDatabase.cc:390] Unable to parse model.config for model[http://gazebosim.org/models/bin_4_dropping_task]
+Failed to load plugin libroboticsgroup_gazebo_mimic_joint_plugin.so: libroboticsgroup_gazebo_mimic_joint_plugin.so: cannot open shared object file: No such file or directory
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In addition, we are still a step away from fully connecting our exercise. The connection with code websocket is still not working, and the shell displays the following error:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Traceback (most recent call last):
+File &quot;/RoboticsAcademy/exercises/pick_place/web-template/exercise.py&quot;, line 351, in &amp;lt;module&amp;gt;
+    server.run_server()
+File &quot;/RoboticsAcademy/exercises/pick_place/web-template/exercise.py&quot;, line 341, in run_server
+    self.server = WebsocketServer(port=1905, host=self.host)
+File &quot;/usr/local/lib/python2.7/dist-packages/websocket_server/websocket_server.py&quot;, line 97, in __init__
+    TCPServer.__init__(self, (host, port), WebSocketHandler)
+File &quot;/usr/lib/python2.7/SocketServer.py&quot;, line 420, in __init__
+    self.server_bind()
+File &quot;/usr/lib/python2.7/SocketServer.py&quot;, line 434, in server_bind
+    self.socket.bind(self.server_address)
+File &quot;/usr/lib/python2.7/socket.py&quot;, line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It’s evident that ws code has several issues, and I’ll be fixing them and working on the widget/Rviz in the coming week.&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="Gazebo" /><category term="launchfile" /><summary type="html">APIs</summary></entry><entry><title type="html">Week 2</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/20/week-2.html" rel="alternate" type="text/html" title="Week 2" /><published>2021-06-20T00:00:00+05:30</published><updated>2021-06-20T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/20/week-2</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/20/week-2.html">&lt;h2 id=&quot;version-control&quot;&gt;Version Control&lt;/h2&gt;
 
 &lt;p&gt;This week didn’t start out the way I had planned, but it did teach me a valuable lesson about the significance of version control! I was working on adding gazebo to the exercise when I came upon this. I realised that the existing exercises didn’t seem to work properly. The reason for this is yet unknown, although it was most likely caused by two or more exercises requesting the same port in the websocket server. And things became even worse when I realised I hadn’t been committing to my changes for a few days. As a result, I had to restart the work from the begining.&lt;/p&gt;
 
