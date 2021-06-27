@@ -1,4 +1,4 @@
-I"è<h2 id="apis">APIs</h2>
+I"<h2 id="apis">APIs</h2>
 
 <p>Robotics Academy is a web-based learning platform for robotics that abstracts other ROS operations. It accomplishes this by utilising APIs that handle all of the work behind the scenes. There are three types of APIs defined: GUI, HAL, and ENV. The details of these APIs are covered in the following sections.</p>
 
@@ -50,7 +50,7 @@ _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
 
 <p>Finally, up until debugging level 4, the exercise was able to connect (simulation started and code and gui websockets opened). The gazebo was operational, and all of the objects, including the robot, were properly spawned.</p>
 
-<p>[]</p>
+<p align="center"><img src="https://lh3.googleusercontent.com/OMz9TQvn-Ijz2v2uXpeYrY0SEM14GD5uyVPWveaRyxqP4pHGLIP4A2JHxBM1YEYG39FKUFBRmBF4zsGUz9TtjIkOtSEuBN5MwMLb3_8Qgp9tykGJp7X5Vw8vb0NwoYmaJSjsj5gWFss1KXTZ-gc9KOMUlNzV9VtXKIDDUL-YQsrDcs_QJh29NKKsVcUKGxBeGEuF5FUfaVqAJgMvN92jkcRvsVtoCALHX0ADXLDO2P2aRZU9z3R8bw_K9_wOQCJMLst-olrsQnRQVGvdb4BLjm0d-Fx3lH0NDng7dq9XNw4VXuPnr8_s4FAF-o-wV8RL2prPwEcpKWDt6SeG46zEBC6TgOYwKLhTREgu29hqWiKv6QkHXjOUksBRsvANKElfkM8ag6MwSdjgb4bEVs8SSnHzS2-Ap2sglUPbR7LCFDmNErbdBDI-fUAw54Vh8gWAZoCiZFezLKCBfy8jjHL1meYoa-3wOQwvP9hC7Qtk9lG8vsohyl6-YfcmWWTkslm3sMxF_0A1p9Svq5QByRw1iLneck4Qv0bVOVTsxVPFUG1gGq_Qeb2M_QEhNV8DxTUK5_ocV3srESsCwwbJsJjm6suG92T3M0u3ezAv8xsWgs3aAMhZPEjS8dp--G2AbGpjIRHtFVzxV0PMsBnu0MQEWEL3RplJG9rM1ENOgfj59Up7pIuOx1-ndkP87rMR3DkcLxcF02JfWPwV9ghbVKNAkuU=w718-h404-no?authuser=0" /></p>
 
 <p>Although the gazebo is working, there are still some warnings and errors which are needed to be resolved.</p>
 
