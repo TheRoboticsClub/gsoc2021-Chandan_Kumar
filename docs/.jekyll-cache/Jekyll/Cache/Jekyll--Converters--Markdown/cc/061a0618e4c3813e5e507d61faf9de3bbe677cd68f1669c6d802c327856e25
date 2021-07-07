@@ -4,7 +4,7 @@
 
 <p align="center"><img src="https://lh3.googleusercontent.com/0rshluuy6dFGqYvLS0em6gos3BR2JlOlGMF7t8VoJlinMTTb781eABae37JDddLeRfNyLF6QRaN04cj7jGlI_Bpbh7Jr3FvRsamShvYkuC0e0WzN7QkDjzAbiiCYN7UPVxb3-T_x8IaBHAmBEAXkH2VHBFakRXzJT0tBlifao3k_QBFh0oE0l4P9Ad3h8iDlYDwY75mri-FfVj2EnIJBv4HHY1Tg8anBwl47eFPcxVx11VTKqG__VmyvSEetgCnShV-MRYEVvCd3DiZDdv5zXWxovjtDLIL3fnj4GH6cdIWv2aMA42KbmUHp0Ra3MMoYjkvQVykW3gP3maTKcoCG9hra1yggcufMc36CtFWbbv8h82qirBIwJpeCgzrp1NXq7cA1z5nt-Cb3HIixPDOFx5YZ3TE5bd1RTOFaM0Y69N593c0TrzdfZvYhE5J8anmNIbT5y844M47UAjMX4ezC50wawkJrWzvmVDLm4jxhHZhL8NSuYr-3OOu3VKdN0H0CEuwdfoWW17CgOK0bSEtCjKCDg5TH1s_3JPAcTK_4LKmAwKVKWOmbNgGLQ2zmIHk0Se_aOLnZy7J2ysw2ogCYRH8vxnZXqAWE6YFxE0_2WBcvergUaBQz1YwVJKrWGsE_9m10WotmpLenFy1XbdaEGXamUzzAVv9StJVoJ-pJpCXFydepeyVUs2XtHf6FMlreEf5ySink_9I6XzPhXvOEcRA=w1605-h903-no?authuser=0" /></p>
 
-<h3 id="connection-with-the-server">Connection with the server</h3>
+<h2 id="connection-with-the-server">Connection with the server</h2>
 
 <p>The issue we were facing was “Address already in use,” which means the server was either configured twice or there was a conflict while connecting the ws client and server because they both utilise the same port. I made some changes to exercise.py (removing the unnecessary routines related to GUI.py) and wolllaahh!!, the exercise was connected.</p>
 
