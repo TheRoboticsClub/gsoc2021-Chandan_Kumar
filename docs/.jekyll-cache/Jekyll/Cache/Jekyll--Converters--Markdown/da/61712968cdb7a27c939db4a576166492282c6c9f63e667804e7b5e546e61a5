@@ -1,0 +1,45 @@
+I"�<h2 id="pyqt5-gui">PyQt5 GUI</h2>
+
+<p>This is the first week of coding period, so I started with designing UI for the web-templates. I began by making a simple PyQt5 GUI for a pick-and-place exercise.</p>
+
+<p><a href="https://pypi.org/project/PyQt5/">PyQt5</a> is a comprehensive set of Python bindings for Qt v5. It is implemented as more than 35 extension modules and enables Python to be used as an alternative application development language to C++ on all supported platforms including iOS and Android.</p>
+
+<p>Since the pick and place exercise necessitates heavy use of Gazebo and Rviz, I positioned their displays side by side so that users would not experience difficulty scrolling or changing tabs. The basic design of a GUI is seen in the figure below.</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWx2n5MObEVKrncL5s_B7nPFv2eOjukyPI9xXUSshKFViKBIj-ycHhLrHhFJwB_gKJm2IpHeVNYU_B5NZdgkuaoAXzqj2LOOBEKNnymqVAZqpOPZFnkE5VptXJ_ZZ29kaMOK05cgf1yScJ1CeumRdzK=w1093-h838-no?authuser=0" width="400" height="320" /></p>
+
+<p>Since Robotics Academy has shifted to web-templates, we will no longer be working on PyQt5 GUIs and will instead focus on improving the web-templates of current exercises.</p>
+
+<h2 id="adding-cards-for-pick-and-place-exercise">Adding cards for pick and place exercise</h2>
+
+<p>To include a new exercise, one needs to add the folder with the exercise contents in exercises/static/exercises following the file name conventions. Then, create the entry in db.sqlite3. A simple way to do this is by using the Django admin page:</p>
+
+<ol>
+  <li>Run python3.8 manage.py runserver.</li>
+  <li>Access http://127.0.0.1:8000/admin/ on a browser and log in with “user” and “pass”.</li>
+  <li>Click on “add exercise” and fill the fields: exercise id (folder name), name (name to display), state, language and description (description to display). Save and exit.</li>
+  <li>Commit db.sqlite3 changes.</li>
+</ol>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVrF3YhZwbceQKJyHGylb7zUgWt_DlFMvD9puJkHnC3WFEV1i2Q797SwGwnJ5Mq41iAbLRN01vGW8kZ_2xdo_N5voI7qx-D83xYY2kG6jmxNWkVe99TLG5098JqSEbVrp01ezhNT2BPARuLbCOSxcLC=w1605-h903-no?authuser=0" /></p>
+
+<h2 id="user-interface-for-pick-and-place-exercise">User Interface for pick and place exercise</h2>
+
+<p>I began working on the exercise’s User Interface after generating a card for pick and place. In this exercise, we have two options: we may use a Rviz display or we can abstract all of Rviz’s functions and develop an Industrial Robot Teleoperator that just provides the functionality required by the exercise, such as forward and inverse kinematics. We intend to use Rviz because other exercises may require it.</p>
+
+<p>The pick and place exercise is depicted in the image below. Rviz, on the other hand, has yet to be exposed on a VNC display. Following a discussion with my mentors, we agreed to make this a higher priority and get it up and running within the next week.</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/GloyCMKSosFooNqZ6mBFj1eYGh67ohsoviQFWuPWFevjYOPvArphXibAN-uZN45UmDy8ufqiPE7XeYyBVGSktJzIbqfHtMV_R8na4LLHXYqyx_c2ZVNaEMjl6lKYybK3YFuSPdntxOJBfg_xKS8On0ga7vxriK22VAfanDPYcZWQFEpnP8hGOLPdbp1H2h_p-Bq38ehBoFsX-YcV55xQH2vQhdn0ELQ6RpfwxtTveywVwbzoJrOuJCDHQxKl5pLLLKmyHyAOO1scJmH6Qcv_SMLi8DhMQGbExiFeD0tAs86x2EkQYT_xI0p_TGXhPnhJndMkvDKc8jzpIPHfsybIQ0gotVbrFd_v4IfRCw3Sqccu-Uk6sgnoT9Zq0beNd5vPVMTQZumqy12B9XhBPuEaKMEoBeiW5tsX2sJc2_2ulIMTruAhiZsJxc5Yx-CXVxax9N7gxjHUEC3I44x_m0m8scIGek-yRK9E0rL927b0P9iO8YvfX1hvctE9Xu7Th6XKYpUGJ9P_3rrYUFx0KF5xrCYTF0JvIfPH5GsKEId6RkQsmSEua60UqyWRhOOL5fRXJL-xXCoJUOl44M9VYD-QWYJxpUOr0udkuhFZ7HAqITRK8sJk-REFexjWGsKHQ95aAXNMtqJPQ86IeurZzLy53Dd3MaL1NNEEvwmXEORbnp_8uBXbGvnKq5Ht9eBfoZYd2csFiK15FVEKK3pFhI0DcEY=w1477-h830-no?authuser=0" /></p>
+
+<h2 id="update-the-current-work-on-docker-hub">Update the current work on docker hub</h2>
+
+<h2 id="meet-1">Meet 1</h2>
+
+<p>Minutes of the meet:</p>
+<ul>
+  <li>Create a docker image, upload it on docker hub, and mention the details in week 1 blog.</li>
+  <li>Incorporate Gazebo in the current template</li>
+  <li>Incorporate Rviz in the current template</li>
+  <li>Notify once blog is updated on the slack channel</li>
+</ul>
+:ET

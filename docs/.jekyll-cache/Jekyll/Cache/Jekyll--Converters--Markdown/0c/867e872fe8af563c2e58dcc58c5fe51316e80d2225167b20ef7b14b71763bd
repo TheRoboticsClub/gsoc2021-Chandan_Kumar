@@ -1,0 +1,80 @@
+I"�<h2 id="apis">APIs</h2>
+
+<p>Robotics Academy is a web-based learning platform for robotics that abstracts other ROS operations. It accomplishes this by utilising APIs that handle all of the work behind the scenes. There are three types of APIs defined: GUI, HAL, and ENV. The details of these APIs are covered in the following sections.</p>
+
+<h3 id="hal">HAL</h3>
+
+<p>HAL(Hardware Abstraction Layer) APIs are used to interact with robot which means one can send commands to different parts of robot using these APIs. Pick and Place exercise requires the following HAL APIs:</p>
+
+<ul>
+  <li>move_pose_arm(pose_goal) : Command the robot with Pose message to make its end effector frame move to the desired pose with inverse kinematics.</li>
+  <li>move_joint_arm(joint_0,joint_1,joint_2,joint_3,joint_4,joint_5) : Command the robot joints to move to desired joints value</li>
+  <li>move_joint_hand(joint_value) : Command the gripper joint to move to desired joint value.</li>
+  <li>back_to_home() : Command the robot arm and gripper to move back to the home pose.</li>
+</ul>
+
+<h3 id="env">ENV</h3>
+
+<p>ENV APIs are used to get the information about the objects present in the world/enviornment. These APIs also containes the helper functions that are useful to complete the exercise.</p>
+
+<ul>
+  <li>get_object_list() : Return the name list of all objects.</li>
+  <li>get_object_pose(object_name) : Return the pose of the object.</li>
+  <li>get_object_info(object_name) : Return the pose, height, width, length, shape, color of the object in order.</li>
+  <li>get_target_list() : Return the name list of all targets.</li>
+  <li>get_target_position(target_name) : Return the position of target where we are going to place the objects.</li>
+  <li>pose2msg(roll, pitch, yaw, x, y, z) : Convert pose to Pose message. The unit of roll, pitch, yaw is radian.</li>
+  <li>msg2pose(pose) : Convert Pose message to pose, return roll, pitch, yaw, x, y, z in order. The unit of roll, pitch, yaw is radian.</li>
+</ul>
+
+<p>Since in the process of connecting the exercises, the <code class="language-plaintext highlighter-rouge">manager.py</code> checks through these APIs, so I thought of creating them in the begining of this week. Also, this exercise doesn’t need GUI so there is no need of GUI APIs but <code class="language-plaintext highlighter-rouge">GUI.py</code> contains some functions related to threads that I’m still not sure about and they could be contributing to the connection of exercises. As a result, I’ve temporarily replaced <code class="language-plaintext highlighter-rouge">GUI.py</code> with <code class="language-plaintext highlighter-rouge">ENV.py</code>.</p>
+
+<h2 id="gazebo-path-errors">Gazebo path errors</h2>
+
+<p>Following the creation of the APIs, I moved on to connecting the exercise to the server. I tried to connect after making some changes to <code class="language-plaintext highlighter-rouge">exercise.py</code>, but I came across a very unpleasant problem. The compiller wasn’t able to identify “pick_place” key in the <code class="language-plaintext highlighter-rouge">instructions.json</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gazebo_path = self.GAZEBO_RESOURCE_PATH + self.instructions[exercise]["gazebo_path"] + ";"
+KeyError: 'pick_place'
+_XSERVTransmkdir: ERROR: Cannot create /tmp/.X11-unix
+_XSERVTransSocketUNIXCreateListener: mkdir(/tmp/.X11-unix) failed, errno = 17
+_XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+</code></pre></div></div>
+
+<p>It appears to be very simple problem where one just needs to add the paths in <code class="language-plaintext highlighter-rouge">instructions.json</code> but the problem was that I added the paths right from the start.</p>
+
+<p>I was finally able to figure out the problem after a lot of testing. Actually, the compiler wasn’t compiling the code I edited; instead, it made a copy of manager.py and instructions.json in the root directory, which it then executed. The changes in my local repository didn’t effect other files because I mounted it with the RoboticsAcademy repository in the container. So, in the end, I updated the root directory’s <code class="language-plaintext highlighter-rouge">instructions.json</code>.</p>
+
+<h2 id="radi-23-or-242">RADI 2.3 or 2.4.2</h2>
+
+<p>After resolving some more XML errors, I ran into another major error. ROS wasn’t able to find the Industrial Robots packages cloned in <code class="language-plaintext highlighter-rouge">/opt/jderobot</code> along with Custom Robots directory.  I tried changing the ROS PACKAGE PATH variable, but it didn’t help. I decided to put these packages in a catkin workspace after browsing the internet for a bit. However, there was no catkin workspace in RADI2.3, but there is in RADI2.4. So I had the option of creating a catkin workspace or upgrading to RADI2.4.2. I decided to use RADI2.4.2 after consulting with my mentor. I successfully moved on to RADI2.4.2 after making few adjustments in Dockerfile2.4.2 and manager.py.</p>
+
+<p>Finally, up until debugging level 4, the exercise was able to connect (simulation started and code and gui websockets opened). The gazebo was operational, and all of the objects, including the robot, were properly spawned.</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVAHQnlCe5SFdGpcGFlCPZUS_kWyT3qXGwwkRLEklqAfo6mVvlIPjNR8ILKDsgNqNY1Xw668QadojhPwxr4_Kv4BwrXn2S7UjKsW58lW5eom4rjBGDNjyVFrA4mQpnePzb42lKNHUS3D8rtzchjijoN=w1605-h903-no?authuser=0" /></p>
+
+<p>Although the gazebo is working, there are still some warnings and errors which are needed to be resolved.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Err] [ModelDatabase.cc:390] Unable to parse model.config for model[http://gazebosim.org/models/bin_4_dropping_task]
+Failed to load plugin libroboticsgroup_gazebo_mimic_joint_plugin.so: libroboticsgroup_gazebo_mimic_joint_plugin.so: cannot open shared object file: No such file or directory
+</code></pre></div></div>
+
+<p>In addition, we are still a step away from fully connecting our exercise. The connection with code websocket is still not working, and the shell displays the following error:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Traceback (most recent call last):
+File "/RoboticsAcademy/exercises/pick_place/web-template/exercise.py", line 351, in &lt;module&gt;
+    server.run_server()
+File "/RoboticsAcademy/exercises/pick_place/web-template/exercise.py", line 341, in run_server
+    self.server = WebsocketServer(port=1905, host=self.host)
+File "/usr/local/lib/python2.7/dist-packages/websocket_server/websocket_server.py", line 97, in __init__
+    TCPServer.__init__(self, (host, port), WebSocketHandler)
+File "/usr/lib/python2.7/SocketServer.py", line 420, in __init__
+    self.server_bind()
+File "/usr/lib/python2.7/SocketServer.py", line 434, in server_bind
+    self.socket.bind(self.server_address)
+File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+</code></pre></div></div>
+
+<p>It’s evident that ws code has several issues, and I’ll be fixing them and working on the widget/Rviz in the coming week.</p>
+:ET

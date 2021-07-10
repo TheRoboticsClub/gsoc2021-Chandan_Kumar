@@ -1,0 +1,35 @@
+I"W<h2 id="rqt-widget">RQT Widget</h2>
+
+<p>The bug mentioned last week hasn’t been fixed yet, and it’s nearly put the project on hold. To avoid this, I chose to focus on other projects so that the project could continue to progress. I chose to concentrate on the widget because working with Rviz required first connecting the exercise. The final widget looked like this:</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWEhzhda1TzhqwBUsFaTbzGvaKM0AjVxm1SPWOZmw0cINRSo055c7ky7wWF5y3MfYh13WutRk9yeq8ypNBSiEZ8uZ9zIv_HaIpcAH4Eg_HcTDtSus-AoE3MsDi2gMJKCxAhkSCXWPBZhq4OrC1FxLpS=w1605-h903-no?authuser=0" /></p>
+
+<h2 id="connection-with-the-server">Connection with the server</h2>
+
+<p>The issue we were facing was “Address already in use,” which means the server was either configured twice or there was a conflict while connecting the ws client and server because they both utilise the same port. I made some changes to exercise.py (removing the unnecessary routines related to GUI.py) and wolllaahh!!, the exercise was connected.</p>
+
+<h2 id="minutes-of-the-meet">Minutes of the meet</h2>
+
+<ul>
+  <li>Start working on getting the Rviz in our exercise.</li>
+  <li>Debug the simulation of pick and place exercise</li>
+  <li>Create the rest of HAL APIs</li>
+  <li>Finalize the exercise and push the changes to the master branch before first evaluation</li>
+</ul>
+
+<h2 id="rviz">Rviz</h2>
+
+<p>We decided to utilise Rviz instead of a widget after connecting the exercise to the server. Thanks to Siddharth, who had previously integrated Rviz into his project, working on Rviz was a lot easier for me. Not to mention, the diffs were created systematically to emphasise the essential adjustments, ensuring that the task went off without a hitch. The only thing I needed to do was resize the Rviz display to fit in the VNC window. This was readily accomplished by altering the rviz configuration files. One of the other minor errors I encountered was that the objects in the rviz weren’t spawning properly. After some investigation, I discovered that the time between the two threads was insufficient, which explains the issue with spawning the objects. A different thread with a longer elapsed period did an excellent job of spawning.</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVy7tfZAGdFhCIkDbZfRDDPHNjbjZIVUJ3RR-unqXBkax5iwzI111jcjPtOc0WQ-UnFJKu4vUsojwXC1JB_PKtTxbGiAS8I68_uzaXbtDTDPpcAp2nmiD4fIYWyMd6iAWdzUlkn_J0mPlax0r3TChkS=w1605-h903-no?authuser=0" /></p>
+
+<h2 id="hal-apis">HAL APIs</h2>
+
+<p>Initially, some of the HAL APIs weren’t working properly. After some debugging, the APIs were found to be fully functional.</p>
+
+<h2 id="gazebo-simulation">Gazebo Simulation</h2>
+
+<p>The next step was to get the simulation up and running. This should not have taken long, however due to bugs, we have yet to get the simulation to operate. The bug is most likely caused by a missing gazebo plugin(<code class="language-plaintext highlighter-rouge">libroboticsgroup_gazebo_mimic_joint_plugin</code>). I’m hoping we’ll be able to fix this bug as well and finish our exercise by the end of the week.</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVrCmeRvGxRnGP40QaA5WQdnPX0De_BV3QGxy91hnwIVz0VQ5A-a7qZJtfdE-RQGGnjg8mH-HhpEfMZ9oyTSVTig0o9y51VxyxC-YBsUNokhFLpSazu8b1a4fRMMNdLRIsEiPeHcmEG42UTa6INSKJX=w1605-h903-no?authuser=0" /></p>
+:ET

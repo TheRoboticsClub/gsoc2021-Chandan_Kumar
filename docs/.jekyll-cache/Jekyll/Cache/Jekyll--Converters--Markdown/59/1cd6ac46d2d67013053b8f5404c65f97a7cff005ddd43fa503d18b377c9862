@@ -1,4 +1,4 @@
-I"�<h2 id="rqt-widget">RQT Widget</h2>
+I"�<h2 id="rqt-widget">RQT Widget</h2>
 
 <p>The bug mentioned last week hasn’t been fixed yet, and it’s nearly put the project on hold. To avoid this, I chose to focus on other projects so that the project could continue to progress. I chose to concentrate on the widget because working with Rviz required first connecting the exercise. The final widget looked like this:</p>
 
@@ -31,5 +31,5 @@
 
 <p>The next step was to get the simulation up and running. This should not have taken long, however due to bugs, we have yet to get the simulation to operate. The bug is most likely caused by a missing gazebo plugin(<code class="language-plaintext highlighter-rouge">libroboticsgroup_gazebo_mimic_joint_plugin</code>). I’m hoping we’ll be able to fix this bug as well and finish our exercise by the end of the week.</p>
 
-<p align="center"><img src="https://lh3.googleusercontent.com/t4NXiPeiLctyI7gzJR-U5Kcmqo1DyVyBfb9z6GLY1zTDmS5uv0lvv0tm6yFglBlL8KAoZLLYMN4uvrWoGSR4TtalA8cChB3fXvzMs4B_kfsbLJ7kPnTFTsjy9M_FhTMxU3wk3psBoObEWx7YPDuSkAVpcc52IxKprizSJPeW0bqBwKyfXZCdnfx02HTc5nQN9RfHeGXyWjWf6PqfyR9XtyqgNd7pDTTPDx2H0WTkazzpupyB05SMAlg46FvSJ8RILhe9gvIY2Kb2WP_SqcTxxMrh6ViFvxTZ6vp57SQy9qwJrkK2BfmGAxFCM5KBeKUt8JxBhWxR_wGZxzUSwi1f6otx5oURx_2OnBSuBTjapkKmXwK__DGMk-loa_i7NUCbBuIfHmeig4ONe9jNjNnj_84SzoO9XX4jbeWmfm-kTXNhB0Fd1oMIWLFUM_8QbvMEkatTsbh-5AeTMHDsnrtnkDPA4WpO1bxTn1nNWap8gitLK7KanwPtxjywKcUOfj808OdUs9BhWH2NrofSMA7oQCa6ohfSdK2I_W0YwZx04AeM8oR5QcORKsl7o3ixHyuTqH_8hUH9ynMnKNXOnGM-5T6l47Nisj6y85gdKT55R-DUDdg7Z1KQ0CtIY1fIBhfcs22-pQfe766dns0QVXH5G_fvIeDju0VPgEuc_jUfsTWcIi_3JDuazjsDxmxT-B3LOenp-QVO650FSo3L04n8uzE=w1605-h903-no?authuser=0" /></p>
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVrCmeRvGxRnGP40QaA5WQdnPX0De_BV3QGxy91hnwIVz0VQ5A-a7qZJtfdE-RQGGnjg8mH-HhpEfMZ9oyTSVTig0o9y51VxyxC-YBsUNokhFLpSazu8b1a4fRMMNdLRIsEiPeHcmEG42UTa6INSKJX=w1605-h903-no?authuser=0" /></p>
 :ET
