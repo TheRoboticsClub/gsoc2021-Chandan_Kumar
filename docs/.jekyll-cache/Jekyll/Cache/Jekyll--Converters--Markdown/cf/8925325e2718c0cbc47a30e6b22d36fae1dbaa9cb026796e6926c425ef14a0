@@ -1,4 +1,4 @@
-I"b<h2 id="gazebo_mimic_joint_plugin">Gazebo_mimic_joint_plugin</h2>
+I"�<h2 id="gazebo_mimic_joint_plugin">Gazebo_mimic_joint_plugin</h2>
 
 <p>Mimic joint plugin is a simple (Model) plugin for Gazebo in order to add to Gazebo the mimic joint functionality that exists in URDF (ROS). Last week, the simulation wasn’t operational because of an error related to this plugin. The error shown in the terminal was:</p>
 
@@ -14,7 +14,7 @@
 
 <p>After resolving the issue with the plugins, I took the code from <code class="language-plaintext highlighter-rouge">MyAlgorithm.py</code> and modified it according to new HAL APIs. The final video simulation of pick &amp; place of blue sphere is shown below:</p>
 
-<p align="center"><img src="https://youtu.be/1rrcCzl-JWI" /></p>
+<iframe src="https://youtu.be/1rrcCzl-JWI"></iframe>
 
 <h2 id="minutes-of-the-meet">Minutes of the meet</h2>
 
@@ -41,7 +41,10 @@
 
 <h2 id="how-to-test">How to test</h2>
 
-<p>We decided to utilise Rviz instead of a widget after connecting the exercise to the server. Thanks to Siddharth, who had previously integrated Rviz into his project, working on Rviz was a lot easier for me. Not to mention, the diffs were created systematically to emphasise the essential adjustments, ensuring that the task went off without a hitch. The only thing I needed to do was resize the Rviz display to fit in the VNC window. This was readily accomplished by altering the rviz configuration files. One of the other minor errors I encountered was that the objects in the rviz weren’t spawning properly. After some investigation, I discovered that the time between the two threads was insufficient, which explains the issue with spawning the objects. A different thread with a longer elapsed period did an excellent job of spawning.</p>
-
-<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVy7tfZAGdFhCIkDbZfRDDPHNjbjZIVUJ3RR-unqXBkax5iwzI111jcjPtOc0WQ-UnFJKu4vUsojwXC1JB_PKtTxbGiAS8I68_uzaXbtDTDPpcAp2nmiD4fIYWyMd6iAWdzUlkn_J0mPlax0r3TChkS=w1605-h903-no?authuser=0" /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone -b pick_place https://github.com/predator4hack/RoboticsAcademy.git
+cd RoboticsAcademy/scripts
+chmod +x build-2.4.sh
+./build.sh &lt;tag&gt; 
+docker run --rm -it -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 -p 6081:6081 jderobot/robotics-academy:&lt;tag&gt; /start.sh
+</code></pre></div></div>
 :ET
