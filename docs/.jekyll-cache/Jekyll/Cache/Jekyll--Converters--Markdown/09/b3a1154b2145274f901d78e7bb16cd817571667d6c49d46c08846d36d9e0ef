@@ -1,0 +1,47 @@
+I"b<h2 id="gazebo_mimic_joint_plugin">Gazebo_mimic_joint_plugin</h2>
+
+<p>Mimic joint plugin is a simple (Model) plugin for Gazebo in order to add to Gazebo the mimic joint functionality that exists in URDF (ROS). Last week, the simulation wasn’t operational because of an error related to this plugin. The error shown in the terminal was:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Err] [Plugin.hh:180] Failed to load plugin libroboticsgroup_gazebo_mimic_joint_plugin.so: libroboticsgroup_gazebo_mimic_joint_plugin.so: cannot open shared object file: No such file or directory
+[Err] [Plugin.hh:180] Failed to load plugin libroboticsgroup_gazebo_mimic_joint_plugin.so: libroboticsgroup_gazebo_mimic_joint_plugin.so: cannot open shared object file: No such file or directory
+[Err] [Plugin.hh:180] Failed to load plugin libroboticsgroup_gazebo_mimic_joint_plugin.so: libroboticsgroup_gazebo_mimic_joint_plugin.so: cannot open shared object file: No such file or directory
+[Err] [Plugin.hh:180] Failed to load plugin libroboticsgroup_gazebo_mimic_joint_plugin.so: libroboticsgroup_gazebo_mimic_joint_plugin.so: cannot open shared object file: No such file or directory
+[Err] [Plugin.hh:180] Failed to load plugin libroboticsgroup_gazebo_mimic_joint_plugin.so: libroboticsgroup_gazebo_mimic_joint_plugin.so: cannot open shared object file: No such file or directory
+[Err] [Plugin.hh:180] Failed to load plugin libgazebo_grasp_fix.so: libgazebo_grasp_fix.so: cannot open shared object file: No such file or directory
+</code></pre></div></div>
+
+<p>As clear from the error message, the <code class="language-plaintext highlighter-rouge">libroboticsgroup_gazebo_mimic_joint_plugin</code> was missing but when I checked the IndustrialRobots repository, I found out that the plugin was already there. In addition, the simulation ran well on my system. After inspecting the env variables, I decided to explicitly define <a href="https://github.com/predator4hack/RoboticsAcademy/commit/eb743a83ab54d96d37879d8cadb6f48601a0c81b">plugin path</a>. So I updated the ‘GAZEBO_PLUGIN_PATH` and guess what, grippers were working now.</p>
+
+<p>After resolving the issue with the plugins, I took the code from <code class="language-plaintext highlighter-rouge">MyAlgorithm.py</code> and modified it according to new HAL APIs. The final video simulation of pick &amp; place of blue sphere is shown below:</p>
+
+<p align="center"><img src="https://youtu.be/1rrcCzl-JWI" /></p>
+
+<h2 id="minutes-of-the-meet">Minutes of the meet</h2>
+
+<ul>
+  <li>Fix the images in the blog</li>
+  <li>Create a branch in IndustrialRobots repo for packages specifically needed for web-templates</li>
+  <li>Update the Docker File and get the pick_place branch ready for testing</li>
+  <li>Fix the reset button</li>
+</ul>
+
+<h3 id="images-in-the-blog">Images in the blog</h3>
+
+<p>I discovered that my mentors couldn’t see the photos in the blogs. The photographs were not available to others since they were saved in my personal album on Google Photos, which I discovered after checking the URLs. I just changed the photos from personal to shared images to remedy the problem.</p>
+
+<h3 id="web-template-branch-in-industrial-robots">Web-template branch in Industrial Robots</h3>
+
+<p>Web-template of Pick &amp; Place exercise in Robotics Academy requires model_manager.py and joint_info.yaml to spawn the objects in Gazebo. This was previously done using rqt_kinematics package. And since we are not incluing this package, I decided to create another package inside industrial_robots directory. Yijia suggested me to create another branch named as web-template for addressing this issue. I creted the <a href="https://github.com/JdeRobot/IndustrialRobots/tree/web-template/industrial_robots/spawn_objects">spawn_objects</a> package and pushed it into <a href="https://github.com/JdeRobot/IndustrialRobots/tree/web-template">web-template branch</a>.</p>
+
+<p>Pull Request: <a href="https://github.com/JdeRobot/IndustrialRobots/pull/18">#18</a></p>
+
+<h2 id="reset-button">Reset Button</h2>
+
+<p>While testing the exercise and making the video, I noticed that the arm starts behaving abnormally once I press the reset button. After checking through the exercise.py, I discovered that reset_world was causing this. Therefore, I decided to use <a href="https://github.com/predator4hack/RoboticsAcademy/blob/pick_place/exercises/pick_place/web-template/env.py">manual functions</a> to get the arm move back to HOME position and respawn the objects. Fortunetly, this worked!!</p>
+
+<h2 id="how-to-test">How to test</h2>
+
+<p>We decided to utilise Rviz instead of a widget after connecting the exercise to the server. Thanks to Siddharth, who had previously integrated Rviz into his project, working on Rviz was a lot easier for me. Not to mention, the diffs were created systematically to emphasise the essential adjustments, ensuring that the task went off without a hitch. The only thing I needed to do was resize the Rviz display to fit in the VNC window. This was readily accomplished by altering the rviz configuration files. One of the other minor errors I encountered was that the objects in the rviz weren’t spawning properly. After some investigation, I discovered that the time between the two threads was insufficient, which explains the issue with spawning the objects. A different thread with a longer elapsed period did an excellent job of spawning.</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVy7tfZAGdFhCIkDbZfRDDPHNjbjZIVUJ3RR-unqXBkax5iwzI111jcjPtOc0WQ-UnFJKu4vUsojwXC1JB_PKtTxbGiAS8I68_uzaXbtDTDPpcAp2nmiD4fIYWyMd6iAWdzUlkn_J0mPlax0r3TChkS=w1605-h903-no?authuser=0" /></p>
+:ET

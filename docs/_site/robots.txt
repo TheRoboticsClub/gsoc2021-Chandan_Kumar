@@ -1,1 +1,1 @@
-Sitemap: https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/sitemap.xml
+Sitemap: http://localhost:4001/gsoc2021-Chandan_Kumar/sitemap.xml
