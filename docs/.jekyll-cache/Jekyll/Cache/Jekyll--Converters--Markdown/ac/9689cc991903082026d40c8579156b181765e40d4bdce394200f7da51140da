@@ -1,4 +1,4 @@
-I"Ê<h2 id="gazebo_mimic_joint_plugin">Gazebo_mimic_joint_plugin</h2>
+I"Î<h2 id="gazebo_mimic_joint_plugin">Gazebo_mimic_joint_plugin</h2>
 
 <p>Mimic joint plugin is a simple (Model) plugin for Gazebo in order to add to Gazebo the mimic joint functionality that exists in URDF (ROS). Last week, the simulation wasnâ€™t operational because of an error related to this plugin. The error shown in the terminal was:</p>
 
@@ -44,7 +44,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone -b pick_place https://github.com/predator4hack/RoboticsAcademy.git
 cd RoboticsAcademy/scripts
 chmod +x build-2.4.sh
-./build.sh &lt;tag&gt; 
+./build-2.4.sh &lt;tag&gt; 
 docker run --rm -it -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 -p 6081:6081 jderobot/robotics-academy:&lt;tag&gt; /start.sh
 </code></pre></div></div>
 :ET
