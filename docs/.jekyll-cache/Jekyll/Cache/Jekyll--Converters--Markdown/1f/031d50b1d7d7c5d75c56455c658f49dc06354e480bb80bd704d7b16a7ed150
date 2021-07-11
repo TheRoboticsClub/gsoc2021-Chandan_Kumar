@@ -1,4 +1,4 @@
-I"»<h2 id="gazebo_mimic_joint_plugin">Gazebo_mimic_joint_plugin</h2>
+I"Ê<h2 id="gazebo_mimic_joint_plugin">Gazebo_mimic_joint_plugin</h2>
 
 <p>Mimic joint plugin is a simple (Model) plugin for Gazebo in order to add to Gazebo the mimic joint functionality that exists in URDF (ROS). Last week, the simulation wasnâ€™t operational because of an error related to this plugin. The error shown in the terminal was:</p>
 
@@ -14,7 +14,7 @@
 
 <p>After resolving the issue with the plugins, I took the code from <code class="language-plaintext highlighter-rouge">MyAlgorithm.py</code> and modified it according to new HAL APIs. The final video simulation of pick &amp; place of blue sphere is shown below:</p>
 
-<iframe src="https://youtu.be/1rrcCzl-JWI"></iframe>
+<p>Link to the <a href="https://youtu.be/1rrcCzl-JWI">video</a></p>
 
 <h2 id="minutes-of-the-meet">Minutes of the meet</h2>
 
