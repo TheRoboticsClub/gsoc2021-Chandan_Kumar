@@ -1,13 +1,13 @@
-I"¤<h2 id="mobile-manipulation-exercise">Mobile Manipulation Exercise</h2>
+I"Â<h2 id="mobile-manipulation-exercise">Mobile Manipulation Exercise</h2>
 
 <p>There were several issues that we were facing in the migration of Machine Vision Exercise which are as follows:</p>
 
 <ul>
-  <li>Not only the position of the object was registered wrong but the shape detected by object_shape_filter was wrong. And we had no idea of the reason behind this behaviour.</li>
-  <li>Yijia also mentioned that since this exercise uses a vaccum gripper and not a qrt_gripper, he faced many difficulties while simulating the picking mechanism last year because The object slips out from the vaccum gripper making it very difficult to complete the task.</li>
+  <li>Not only was the objectâ€™s position incorrectly recorded, but the shape identified by object shape filter was incorrect as well. And we had no clue why this behaviour was occurring.</li>
+  <li>Yijia also stated that because this exercise employs a vaccum gripper rather than a qrt gripper, he had a lot of trouble replicating the picking mechanism last year because the object would slide out of the vaccum gripper, making the task extremely difficult to accomplish.</li>
 </ul>
 
-<p>Considering all these points, we decided to move on to mobile manipulation exercise which uses rqt_gripper. We planned to first finish Mobile manipulation exercise and then move on to machine vision.</p>
+<p>We chose to go on to the mobile manipulation exercise, which uses rqt gripper, after considering all of these factors. We intended to finish the mobile manipulation exercise before moving on to machine vision.</p>
 
 <h2 id="migration-to-radi-3-or-migration-of-rest-of-the-exercises">Migration to RADI-3 or Migration of rest of the exercises</h2>
 
