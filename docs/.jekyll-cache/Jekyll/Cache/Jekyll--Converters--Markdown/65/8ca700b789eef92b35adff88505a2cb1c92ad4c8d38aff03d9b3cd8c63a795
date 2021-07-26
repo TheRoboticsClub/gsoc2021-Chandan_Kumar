@@ -1,0 +1,42 @@
+I"�<h2 id="mobile-manipulation-exercise">Mobile Manipulation Exercise</h2>
+
+<p>There were several issues that we were facing in the migration of Machine Vision Exercise which are as follows:</p>
+
+<ul>
+  <li>Not only the position of the object was registered wrong but the shape detected by object_shape_filter was wrong. And we had no idea of the reason behind this behaviour.</li>
+  <li>Yijia also mentioned that since this exercise uses a vaccum gripper and not a qrt_gripper, he faced many difficulties while simulating the picking mechanism last year because The object slips out from the vaccum gripper making it very difficult to complete the task.</li>
+</ul>
+
+<p>Considering all these points, we decided to move on to mobile manipulation exercise which uses rqt_gripper. We planned to first finish Mobile manipulation exercise and then move on to machine vision.</p>
+
+<h2 id="migration-to-radi-3-or-migration-of-rest-of-the-exercises">Migration to RADI-3 or Migration of rest of the exercises</h2>
+
+<p>Instead of moving the rest of the exercises to RADI-2 (Melodic + Python2), Jose Maria proposed that we migrate the existing pick and place exercises to RADI-3 (Noetic + Python3). Rviz, like Gzclient and console for most RADI-3 exercises, can be used as an additional tool in other RADI-3 exercises. This would also act as a feature to the new RADI and future debugging will be a lot easier as one will not have to make the changes in RADI-3 as well as RADI-2(if Rviz is integrated in RADI-2). After considering all of this, my mentors and I agreed, and we met to re-create our weekly goals.</p>
+
+<p>However, after pulling the RADI-3 docker image and making some adjustments, I discovered that most of the industrial rtobot packages were reporting problems. The reason for this was that these packages were produced with Melodic, and I needed to make some changes to run them on Noetic. But the problem with that I have Melodic installed in my PC on Ubuntu 18.04. So, in order to debug, I’ll have to first instal Ubuntu 20.02, then Noetic, which is not only a time-consuming job, but also one that I can’t just abandon to my ongoing Melodic projects.</p>
+
+<p>So, after talking with my mentor about it, we decided to keep moving forward with the exercise conversion to web-templates. We may then go on to the RADI-3 migration of exercises after the exercises have been transferred.</p>
+
+<h2 id="migration-of-mobile-manipulation-exercise">Migration of Mobile Manipulation Exercise</h2>
+
+<p>So, after a lengthy time of deliberation, I returned to coding and began working on the mobile migration exercises migration. I began by writing the simulation’s code. Its navigation functioned properly, but it was unable to pickup the objects. I needed to fine-tune WIDTH since the items were slipping out of the grippers. Fortunately, Yijia had the solution to this exercise, which he had prepared the previous year. When I tested his code, it worked flawlessly.</p>
+
+<p>After that, I made a card for the Mobile Manipulation exercise and a prototype for the new exercises. The first testing revealed a large number of problems linked to missing packages (mainly navigation packages). Even after installing those packages, there were still two problems that I couldn’t fix.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)
+
+&gt;Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory
+</code></pre></div></div>
+
+<p>The first problem indicates that the file requires executable permissions, however this was not resolved even after executing the <code class="language-plaintext highlighter-rouge">chmod +x</code> command. 
+According to the second error, <code class="language-plaintext highlighter-rouge">libgazebo ros moveit planning scene</code> plugin was missing. I looked for it on the internet but couldn’t find anything. What’s strange is that there’s no such issue when I run it locally, and this package doesn’t even exist on my machine.</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUPjyYcBZ2pgHU3GBf8NtpRdToYPzL-wYVhjXUErj2zh5KfDRXsqCORj8KjHixUiP5ptZyovhtY-EKxW9qu0721ev3J68Wpv-hZexkpxJLIWAmXO-jHJKt6FH7qFeUIl7UxwkBjikpKJNu9l187dOWT=w1605-h903-no?authuser=0" /></p>
+
+<p>For testing the current exericse, one can pull the <a href="https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation">Mobile Manipulation branch</a> from my repository and use the command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --rm -it --name=Industrial -v /your/local/repo:/RoboticsAcademy -p 8000:8000 -p 2303:2303 -p 1905:1905 -p 8765:8765 -p 6080:6080 -p 1108:1108 -p 6081:6081 jderobot/robotics-academy:2.4 /RoboticsAcademy/scripts/start.sh
+</code></pre></div></div>
+
+<p>The git diffs can be checked from <a href="https://github.com/JdeRobot/RoboticsAcademy/compare/melodic...predator4hack:mobile_manipulation?expand=1">here</a></p>
+:ET

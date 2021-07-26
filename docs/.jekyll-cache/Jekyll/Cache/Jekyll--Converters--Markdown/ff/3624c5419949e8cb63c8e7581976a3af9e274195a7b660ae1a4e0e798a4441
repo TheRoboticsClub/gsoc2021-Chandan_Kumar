@@ -1,0 +1,27 @@
+I"�
+<h2 id="pull-request">Pull Request</h2>
+
+<p>We had our project evaluation this week, and I had to make a pull request from my local branch to JdeRobot’s master branch in order to do so. To finish this process, I first removed all of the redundant files that had been generated after executing the rsync command from my local branch.</p>
+
+<p>Commit : <a href="https://github.com/JdeRobot/RoboticsAcademy/commit/288f4d0bf8e6a4ba5a2561058b4ad382194de3ed">Removed the redundant exercises</a></p>
+
+<p>After this, I created a <a href="https://github.com/JdeRobot/RoboticsAcademy/pull/1153">draft pull request</a> in Robotics Academy repository for the pick and place exercise.</p>
+
+<h2 id="machine-vision">Machine Vision</h2>
+
+<p>Since my classes are going to get started by the end of July, I started working on to the next exercise which is “Machine Vision”. The first stage was to create the code for simulation of Machine Vision exercise.  I addressed portions of the documentation with Yijia in the weekly meet that I didn’t understand (for example, the radius used in shape filter and how to pick rgb range for the exercise). I developed an example code for conducting machine vision exercises after clarifying all of my doubts.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">object_color_filter</code> and <code class="language-plaintext highlighter-rouge">object shape filter</code> were both working fine, and the underlying pcl filter recognised the objects correctly. The results are depicted in the diagram below:</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWhoyj07CEg0Gb8a84t5gc6xoCGbJOn2UN7kVuihCJLiE_aloUwGh_fuBrIYLUxd87-G70XU5TuGQ234fG0GsocfD7LkMclUK-ubOPTOMusUirLzp_4C6baJKy8bioC8gzLqq8cDLvOgR_aFSKqvhQl=w1605-h903-no?authuser=0" /></p>
+
+<p>The robot arm, however, was unable to pick up the objects and throws up the error: <code class="language-plaintext highlighter-rouge">AttributeError : 'NoneType' object has no attribute 'x'</code>. Following further investigation, I discovered that the location of the item identified in the tf frame was incorrect, as seen in the figure below:</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLW8SYGVir2sbM-PDMapR_7m8tcBEey2KTIaeTZEaC2jmezWZ36fZJZ5DK0eDNhJsYj6dvtGfvrnhtgwUm9lTtjgUqToLAQC11pndgcEBQJDdY3HARBfV2iS4PCHJ-eu-TH6z1ZS9sexE1EbRZUEfwle=w1605-h903-no?authuser=0" /></p>
+
+<h2 id="final-review">Final Review</h2>
+
+<p>I created the final contributions of the pick and place exercise’s pull request after discussing some of the needed adjustments with my mentors.</p>
+
+<p>Final Pull Request: <a href="https://github.com/JdeRobot/RoboticsAcademy/pull/1153">https://github.com/JdeRobot/RoboticsAcademy/pull/1153</a></p>
+:ET
