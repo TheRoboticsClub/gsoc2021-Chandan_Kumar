@@ -1,0 +1,30 @@
+I"�<h2 id="cob-scan-unifier">COB Scan Unifier</h2>
+
+<p>The cob_driver stack includes packages that provide access to the Care-O-bot hardware through ROS messages, services and actions. E.g. for mobile base, arm, camera sensors, laser scanners, etc. However, terminal shows up with error <code class="language-plaintext highlighter-rouge">Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)</code>. This reason behind this error according to this <a href="https://github.com/microsoft/AirSim/issues/2591">post</a> is sourcing. But since each command runs a separate sub-shell, so the environment variables are not preserved and <code class="language-plaintext highlighter-rouge">.bashrc</code> is not sourced. Related stackoverflow <a href="https://stackoverflow.com/questions/55206227/why-bashrc-is-not-executed-when-run-docker-container">answer</a>.</p>
+
+<h2 id="libgazebo-ros-moveit-planning-scene">LibGazebo ROS Moveit Planning Scene</h2>
+
+<p>Terminal shows up an error <code class="language-plaintext highlighter-rouge">Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or director</code>. This clearly states that the mentioned plugin isn’t avalialble. However, the identical plugin isn’t even installed on my local PC, and the exercise runs smoothly there. Furthermore, there is no information about this plugin on the internet.</p>
+
+<h2 id="testing-machine-vision-exercise">Testing Machine Vision Exercise</h2>
+
+<p>The most difficult aspect of this exercise (Machine Vision) is using the Vaccum Gipper to pick up the items. Yijia assisted me in locating the object and carrying out the pick procedure. However, it is still unable to correctly pick the items. I tried adjusting the WIDTH value, but it still doesn’t seem to be picking up the objects correctly. I’ll keep tweaking the parameters till the simulation works as a goal for next week.</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVpkC8B4_wmkksZOXSBeEwRhfDbpCBoguids5Tny6zsKHddu_b6ZENn42O931p2I4B0TCZk5G7ghNIGMMSqtNfroFe9viF7Wwfh3atN2BbO-mrvs2JbJcY_q7eGjuxXZKRe_EAI8YuYGIcFLaRclslb=w1605-h903-no?authuser=0" /></p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWXkbjALs8fBGXdne-G7xlIYA8YD1ixgdet4OGopo6now9LeZ70zSwiKLKIpFsXRn8XNLJPk3gERO_CHcSwEMGTjHNeyU23UBX4f8lOVUmksFLUcSdRAEyc6eKtGFL9Iec_GEbm4tGAsNvIfzkUoWDJ=w1605-h903-no?authuser=0" /></p>
+
+<h2 id="issues-and-pull-request">Issues and Pull Request</h2>
+
+<p>We discussed integrating the pick and place exercise into the Robotics Academy repository during our weekly meeting. But, it seems that a separate pull request is required for integrating Rivz with the exercise, which will make developing new exercises with Rviz capabilities easier. However, because Rviz was already integrated into the Pick and Place exercise, it would be a time-consuming and inefficient task to first de-integrate Rviz from Pick and Place, make a pull request, and then create a pull request incorporating Rviz into the exercises. So, after debating this during the meet, we decided to migrate the Machine Vision exercise without Rviz first, and then add Rviz with a new pull request later.</p>
+
+<h3 id="mobile-manipulation">Mobile Manipulation</h3>
+
+<p>Issue: <a href="https://github.com/JdeRobot/RoboticsAcademy/issues/1205">#1205</a>
+Pull Request: <a href="https://github.com/JdeRobot/RoboticsAcademy/pull/1206">#1206</a></p>
+
+<h3 id="machine-vision">Machine Vision</h3>
+
+<p>Issue: <a href="https://github.com/JdeRobot/RoboticsAcademy/issues/1204">#1204</a>
+Pull Request: <a href="https://github.com/JdeRobot/RoboticsAcademy/pull/1207">#1207</a></p>
+:ET
