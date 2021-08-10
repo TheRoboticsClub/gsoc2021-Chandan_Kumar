@@ -1,0 +1,53 @@
+I"�<h2 id="machine-vision">Machine Vision</h2>
+
+<p>We considered having a separate pull request for Rviz during last week’s meeting so that other developers can incorporate it into other exercises more easily. We decided to implement this with Machine Vision exercise because Pick And Place exercise was already integrated with Rviz. As a result, I’ll need to first create a pull request for Machine vision exercise moved to web-templates without Rviz, and then another pull request to add Rviz as a feature.</p>
+
+<p>So the Machine Vision exercise was the first thing I did this week. But, once again, I came into the same error of not being able to locate the nodes i.e. <code class="language-plaintext highlighter-rouge">ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)</code>. Other than that, there were other transform errors that are easily overlooked, but when run in the container, they appear in the terminal frequently, which isn’t ideal. All of the errors are depicted in the image below:</p>
+
+<p align="center"><img src="https://lh3.googleusercontent.com/hoUKn6JwjBiEvMyjf9CJFlHPppOfP2rix8qIcRfTRZpN8UJp8JEhZLc2HaWoNV6Ydx4V9hc4dQkTMgR9wXes3CeNZUZG1fRs3WH0e-BpWvvzSyAjKAi-gSdV0BOPP_HYW-s7Ucsf-Xjc6z3yoLt3u8_96Ybqjyt9diSYaAQwAyazpGD6rR_5Ndf29zAUR0oLU4kNH_W7howMHPiMy4Xao5AgwNOoz0ABK0qD-6OPNYyni2VIu0h96CaMzz_UXp7aJTcdoeGKHLqpbpMTy4DVsbaJ2wJhjAo7SnZeTcY7yHmQH-je_yFa04NmvmoJckrF5eI8NZPaKW7KLpWwqjklZCDLVNccM_yMIHfvv1zeutyP705q_eKkMNz2Kfl88DsedcfmjVtFkSBhoD8HPwMGlEN0OEl80Tu0Sh5mw7SiZxRAONFSukDlq4_-T15i8H5UlYDEhfvnWnjUssjjH7IrKMnAi7-5F4Ii0p3Z-7_kidFx22F1bRjQPr_nOyh60V7zSU-POQCn0yt096EWiVd4tuJWPhv_sASzUufibmxt6RwFu2bRvilbWBxZQNx5wcHs4K_28_-eLUcEhgVw9iw6IZ_6agkKgpgh-LX7sEuP2Sw89WnmZW5VmZUz4QgR4IBy_vGYwiDDG6GSBMZECsMxmzayrC7akb0tr-5MDqnBSteXKAf5-jBDW2UcwNx55VB0n5EB7FfsOuumDGEfBTvnQOk=w1605-h903-no?authuser=0" /></p>
+
+<h2 id="ros-entrypoint">ROS Entrypoint</h2>
+
+<p>According to the error, the system wasn’t able to locate the nodes. According to this <a href="https://get-help.robotigniteacademy.com/t/ros-basics-in-5-days-c-launching-issues/8499">answer</a>, sourcing the workspace resolves the problem, we reasoned that if we could source all of the terminals at the start of the container’s execution, the error would be fixed. Normally, this is accomplished by adding source to the bashrc file, but because each command in Docker runs a different sub-shell, the environment variables are not saved, and the <code class="language-plaintext highlighter-rouge">.bashrc</code> file is not sourced. (see this <a href="https://stackoverflow.com/questions/54961370/dockerfile-an-appended-variable-is-not-persisted-between-run-instructions/54961726#54961726">answer</a>).</p>
+
+<p>In order to address this issue, we can use <code class="language-plaintext highlighter-rouge">ros_entrypoint.sh</code> which will allow us to execute the commands for each new sub-shell(see <a href="https://answers.ros.org/question/356401/is-ros-already-sourced-if-i-do-it-from-a-dockerfile/">this discussion</a>). Therfore I created a <code class="language-plaintext highlighter-rouge">radi-entrypoint.sh</code> and added all the source commands for ROS into it.
+The <code class="language-plaintext highlighter-rouge">start.sh</code> was modified as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env bash
+# This file is intended to be run from the root
+# of the Docker container
+
+# radi-entrypoint's primary purpose is to source the ROS setup files.
+source radi-entrypoint.sh
+# Start the Django server. Load the list of exercises from db.sqlite3
+python3 RoboticsAcademy/manage.py runserver 0.0.0.0:8000 &amp;
+# Start RADI
+python3.8 manager.py
+</code></pre></div></div>
+
+<p>We also need ROS environment sourced inside the bash terminal as the console would be used by the student.
+The only mention of <code class="language-plaintext highlighter-rouge">~/.bashrc</code> inside the Dockerfile is in the following layer-</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RUN echo 'source /radi-entrypoint.sh' &gt;&gt; ~/.bashrc
+</code></pre></div></div>
+
+<p>After re-building the image, all of the sub-terminals were sourced at the same time, eliminating the need for external sourcing. The bad news was that the same problem was still appearing when running the Mobile Manipulation exercises.</p>
+
+<h2 id="pcl-filter">PCL filter</h2>
+
+<p>The ROS interface stack PCL (Point Cloud Library). For 3D applications using n-D Point Clouds and 3D geometry processing in ROS, PCL-ROS is the preferred bridge. The PCL filter utilised in Industrial Robots, on the other hand, is a proprietary design. As a result, we won’t be able to just install PCL filters and eliminate the issues. One thing to keep in mind is that, like cob scan unifier, this package generates some warnings when using catkin build. I suspect that this is causing the difficulty in locating the nodes within the packages. As a result, in the following weeks, I’ll strive to resolve these warnings.</p>
+
+<h2 id="libgazebo-ros-moveit-planning-scene">LibGazebo ROS Moveit Planning Scene</h2>
+
+<p>This is a model plugin which broadcasts MoveIt PlanningScene messages so that the planning scene stays up-to-date with the world simulation. This is useful if you want to “fake” perfect perception of the environment. Yiia found some resources related to <code class="language-plaintext highlighter-rouge">libgazebo_ros_moveit_planning_scene</code>. One of them was describes the function of this plugin(see <a href="http://docs.ros.org/en/hydro/api/gazebo_plugins/html/group__GazeboRosMoveItPlanningScene.html">this</a>) and the other was a <a href="https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713">pull request</a> for adding that plugin in kinetic devel. We set up the workspace and installed the plugin. Finally, the missing plugin error was fixed, however it came with a slew of new issues. Yijia recommended that I uninstall the redundant plugins that were installed during the installation of this plugin because they can conflict with the current custom plugins, causing the issues.</p>
+
+<h3 id="mobile-manipulation">Mobile Manipulation</h3>
+
+<p>Issue: <a href="https://github.com/JdeRobot/RoboticsAcademy/issues/1205">#1205</a>
+Pull Request: <a href="https://github.com/JdeRobot/RoboticsAcademy/pull/1206">#1206</a></p>
+
+<h3 id="machine-vision-1">Machine Vision</h3>
+
+<p>Issue: <a href="https://github.com/JdeRobot/RoboticsAcademy/issues/1204">#1204</a>
+Pull Request: <a href="https://github.com/JdeRobot/RoboticsAcademy/pull/1207">#1207</a></p>
+:ET
