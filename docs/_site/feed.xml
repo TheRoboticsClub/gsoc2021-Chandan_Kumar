@@ -1,4 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-20T07:39:13+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">Week 9</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9.html" rel="alternate" type="text/html" title="Week 9" /><published>2021-08-08T00:00:00+05:30</published><updated>2021-08-08T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9.html">&lt;h2 id=&quot;machine-vision&quot;&gt;Machine Vision&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-20T11:25:42+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">Week 10</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html" rel="alternate" type="text/html" title="Week 10" /><published>2021-08-15T00:00:00+05:30</published><updated>2021-08-15T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html">&lt;h2 id=&quot;libgazebo_ros_moveit_planning_scene&quot;&gt;libgazebo_ros_moveit_planning_scene&lt;/h2&gt;
+
+&lt;p&gt;While connecting with Mobile Manipulation exercise, we were facing two errors and one of them was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory&lt;/code&gt;. As mentioned in the previous blogs, this is a model plugin which broadcasts Moveit PlanningScene messages so that the planning scene stays up-to-date with the world simulation. This is useful if you want to “fake” perfect perception of the environment. Yijia Wu found this plugin ros_simulation repository along with the &lt;a href=&quot;https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713&quot;&gt;pull request&lt;/a&gt; in which this plugin was integrated in ros_simulation in kinetic-devel&lt;/p&gt;
+
+&lt;p&gt;In the meet, we tried to resolve this error by cloning the repo and building the workspace. Fortunetly, that error was resolved costed us some more errors related to wrold and frames. Yijia asked me to integrate just the required plugins without rest of the packages in the repo considering that those redundant packages might be creating these erorrs, but it seems that it wasn’t the case. I removed all the redundant plugins and tried to connect with the exercise but those errors were stlll there. All of the errors are depicted in the image below:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;machine-vision-exercise-without-rviz&quot;&gt;Machine Vision exercise without Rviz&lt;/h2&gt;
+
+&lt;p&gt;As we decided to create a separate pull request integrating Rviz in Machine Vision exercise, I started working on it this week. After exposing VNC display, creating a launch file and some APIs to spawn the objects, Rviz was ready and working fluwntly. The integrated rviz window can be seen in the image below:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;testing-exercises&quot;&gt;Testing Exercises&lt;/h2&gt;
+
+&lt;p&gt;Yijia suggested me to test the exercises ignoring the cob and pcl errors to ensure that everything else is working along except these errors.&lt;/p&gt;
+
+&lt;h3 id=&quot;machine-vision&quot;&gt;Machine Vision&lt;/h3&gt;
+
+&lt;p&gt;In order to test machine vision exercise, I first wrote the code for simulation of the exercise taking reference from previous year’s code. After resolving some syntactical errors and adding some missing HAL APIs, the simulation code is ready.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from GUI import GUI
+from HAL import HAL
+# Enter sequential code!
+
+while True:
+    # Enter iterative code!
+    HAL.back_to_home()
+    HAL.send_message(&quot;Building map&quot;)
+    color = &quot;green&quot;
+    shape = &quot;cylinder&quot;
+    HAL.start_color_filter(color, 50, 0, 255, 100, 50, 0)
+    HAL.start_shape_filter(color, shape, 0.05)
+    object_name = &quot;green_cylinder&quot;
+    position = HAL.get_object_position(object_name)
+    HAL.pickup(object_name, position)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;On testing the exercise with the code above, I found that the arm went to the home position but didn’t moved from there. On checking the console, it showed &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Attribute error: x is of None type&lt;/code&gt;. This is caused because pcl node isn’t working and due to which the octomap wasn’t created and the oject wasn’t detected.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mobile-manipulation-exercise&quot;&gt;Mobile Manipulation Exercise&lt;/h3&gt;
+
+&lt;p&gt;Below is the code that I wrote in order to test Mobile Manipulation exercise:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from GUI import GUI
+from HAL import HAL
+# Enter sequential code!
+
+while True:
+    # Enter iterative code!
+    HAL.back_to_home()
+    target_name = &quot;conveyor1&quot;
+    pose = HAL.get_target_pose(target_name)
+    HAL.send_goal_to_client(pose)
+    while HAL.get_result_from_client() != True:
+        pass
+    print(HAL.get_robot_pose())
+    HAL.move_to_pick_place_home()
+    HAL.spawn_obstacle_rviz(&quot;conveyor1&quot;)
+    HAL.spawn_all_objects()
+    object_name = &quot;green_cylinder&quot;
+    pose = HAL.get_object_pose(object_name)
+    pose.position.z -= 0.01
+    HAL.pickup(object_name, pose.position, 0.48)
+    HAL.back_to_home(False)
+    target_name = &quot;conveyor2&quot;
+    pose = HAL.get_target_pose(target_name)
+    HAL.send_goal_to_client(pose)
+    while HAL.get_result_from_client() != True:
+        pass
+    print(HAL.get_robot_pose())
+    HAL.move_to_pick_place_home(False)
+    HAL.spawn_obstacle_rviz(target_name)
+    pose = HAL.get_target_position(target_name)
+    HAL.place(object_name, pose)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The biggest problem in testing the code in Mobile Manipulation exercise was that the exercise wasn’t connecting everytime I tried to connect the exercise.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="libgazebo_ros_moveit" /><summary type="html">libgazebo_ros_moveit_planning_scene</summary></entry><entry><title type="html">Week 9</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9.html" rel="alternate" type="text/html" title="Week 9" /><published>2021-08-08T00:00:00+05:30</published><updated>2021-08-08T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9.html">&lt;h2 id=&quot;machine-vision&quot;&gt;Machine Vision&lt;/h2&gt;
 
 &lt;p&gt;We considered having a separate pull request for Rviz during last week’s meeting so that other developers can incorporate it into other exercises more easily. We decided to implement this with Machine Vision exercise because Pick And Place exercise was already integrated with Rviz. As a result, I’ll need to first create a pull request for Machine vision exercise moved to web-templates without Rviz, and then another pull request to add Rviz as a feature.&lt;/p&gt;
 
@@ -357,52 +439,4 @@ socket.error: [Errno 98] Address already in use
   &lt;li&gt;Incorporate Gazebo in the current template&lt;/li&gt;
   &lt;li&gt;Incorporate Rviz in the current template&lt;/li&gt;
   &lt;li&gt;Notify once blog is updated on the slack channel&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="PyQt5" /><category term="Frontend" /><category term="UI/UX" /><category term="Meet" /><summary type="html">PyQt5 GUI</summary></entry><entry><title type="html">Community Bonding Week 2-3</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/06/06/community-bonding-week-2-3.html" rel="alternate" type="text/html" title="Community Bonding Week 2-3" /><published>2021-06-06T00:00:00+05:30</published><updated>2021-06-06T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/06/06/community-bonding-week-2-3</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/community%20bonding/2021/06/06/community-bonding-week-2-3.html">&lt;h2 id=&quot;docker-bind-mount&quot;&gt;Docker Bind Mount&lt;/h2&gt;
-
-&lt;p&gt;The first step in starting development in a docker container is to use bind mounts or volumes so that the changes in the docker container can be seen without having to rebuild the image. Bind mounts can be used to create side-by-side development environments and also to share data that needs to persist longer than the lifespan of the docker container.&lt;/p&gt;
-
-&lt;p&gt;When you use a bind mount, a file or directory on the host machine is mounted into a container. The file or directory is referenced by its absolute path on the host machine. By contrast, when you use a volume, a new directory is created within Docker’s storage directory on the host machine, and Docker manages that directory’s contents.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://docs.docker.com/storage/images/types-of-mounts-volume.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;warnings-and-errors&quot;&gt;Warnings and errors&lt;/h3&gt;
-
-&lt;h4 id=&quot;ros-gpg-key-expiration&quot;&gt;ROS GPG Key Expiration&lt;/h4&gt;
-
-&lt;p&gt;ROS GPG keys inadvertently expired and caused apt failures for a number of users. A full description of the security breach and the remediation can be found in this &lt;a href=&quot;https://discourse.ros.org/t/new-gpg-keys-deployed-for-packages-ros-org/9454&quot;&gt;ROS Discourse post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To fix this issue one will need to update the public key used for ROS apt repositories. To do this for ROS 1 installations you need to run a single command:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;A &lt;a href=&quot;https://github.com/JdeRobot/RoboticsAcademy/commit/842c0758a856c7119b6435fc8f17907bd17fdab1&quot;&gt;commit&lt;/a&gt; has been created in order to fix this issue.&lt;/p&gt;
-
-&lt;h4 id=&quot;rle-exception&quot;&gt;RLE Exception&lt;/h4&gt;
-
-&lt;p&gt;After successfully mounting the container with my local repository, I discovered that none of the exercises are connecting to the server and following error was displayed:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RLE Exception: [./RoboticsAcademy/exercises/follow_line/web-template/launch/simple_line_follower_ros_headless.launch] is not a launch file name The traceback for the exception was written to the log file&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;After altering the GAZEBO_RESOURCE_PATH and paths in instruction.json, the error was rectified.&lt;/p&gt;
-
-&lt;h2 id=&quot;gazeboweb-testing&quot;&gt;GazeboWeb Testing&lt;/h2&gt;
-
-&lt;p&gt;Robotics Academy uses GazeboWeb as a front-end graphical interface to gzserver which provides visualization of the simulation. Gzweb lets you interact with the simulation from the comfort of a web browser. This means cross-platform support, minimal client-side installation, and support for mobile devices.&lt;/p&gt;
-
-&lt;p&gt;To learn how Gzweb works, I made a basic webpage, connected it to ROS with rosbridge server, and used the roslibjs package  to drive turtlebot3 around in a circle.  A short video below demonstrates the moving turtlebot after recieving commands from html page.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUExUWeJ07sANryG5iLw4Yrw3My1KFlPTPFo56h2mg4GuIs6t4ERUSDNgqgBRNg_av86pfzrOoRcAMJj9buCCYk2KtxnSgydxoaScBWM5ejuT5vmRaOFd5FXX8eb6gYU4gHqMlaIGnxDMS23eu5H3mR=w600-h338-no?authuser=0&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;rvizweb-testing&quot;&gt;RvizWeb Testing&lt;/h2&gt;
-
-&lt;p&gt;Rviz is required for Industrial Robot exercises, and RviWeb is one method for incorporating Rviz into a web page. RVizWeb provides a convenient way of building and launching a web application with features similar to RViz. This &lt;a href=&quot;https://github.com/osrf/rvizweb&quot;&gt;documentation&lt;/a&gt; contains further information on RvizWeb.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLXUEAPJZYcmgrdU23qWpVtYc2QINwzIuzpXTdk9dbEkCabpfiEopWEVeS_8h1edXU8YtRDLzdCA1aS1fRzmUUFo-azwK9XEbexDYGN5rk7Hag9n4M9vBVmUTWkVMT5nAYqSCnv9Iogny2H86jB96r6L=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;using-bullet-for-collision-checking&quot;&gt;Using Bullet for Collision Checking&lt;/h2&gt;
-
-&lt;p&gt;According to the project proposal, we planned to use bullet for collision checking. Bullet has continuous collision capabilities. This means that it can be guaranteed that no collision occurs during the transition between two discrete robot states with the environment.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUEpYYenDIruLMOpAVdq2xsRbZ_AKoLQJgkjng3pMnLiGnftQ55jzgtlabnDvegoo4incRxIDGqASzfFxU9c8QQjJFyo_5_IazraZXcrBlHQAfQKX-5iSNXq8pPY4iubyDmB1Mo3euRsjeySXT12Xaf=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Bullet’s only drawback is that it is not compatible with all versions. Bullet is a ROS1-Noetic and ROS2-Foxy. I also discovered that the bullet took a long time to compute the place of collision (much slower than using traditional non-continuous collision). As a result, I feel we can put the process of adding bullets into the industrial robot exercise on hold until we get to Noetic.&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="community bonding" /><category term="docker" /><category term="Rvizweb" /><category term="Gzweb" /><summary type="html">Docker Bind Mount</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="PyQt5" /><category term="Frontend" /><category term="UI/UX" /><category term="Meet" /><summary type="html">PyQt5 GUI</summary></entry></feed>
