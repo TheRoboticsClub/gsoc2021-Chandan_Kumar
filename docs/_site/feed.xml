@@ -1,4 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-20T11:25:42+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">Week 10</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html" rel="alternate" type="text/html" title="Week 10" /><published>2021-08-15T00:00:00+05:30</published><updated>2021-08-15T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html">&lt;h2 id=&quot;libgazebo_ros_moveit_planning_scene&quot;&gt;libgazebo_ros_moveit_planning_scene&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-21T18:45:03+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">GSoC’21 Summary</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html" rel="alternate" type="text/html" title="GSoC’21 Summary" /><published>2021-08-21T00:00:00+05:30</published><updated>2021-08-21T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html">&lt;p&gt;&lt;a href=&quot;https://jderobot.github.io/RoboticsAcademy/&quot;&gt;Robotics-Academy&lt;/a&gt; is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.&lt;/p&gt;
+
+&lt;p&gt;The main goal of this project was to migrate three industrial robots exercises(i.e. Pick &amp;amp; Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.&lt;/p&gt;
+
+&lt;h2 id=&quot;pick--place-exercise&quot;&gt;Pick &amp;amp; Place Exercise&lt;/h2&gt;
+
+&lt;p&gt;The goal of this exercise is to learn the underlying infrastructure of Industrial Robot exercises(ROS + MoveIt + Industrial Robotics API) and get familiar with the key components needed for more complex exercises by completing the task of pick and place multiple objects and classify them by color or shape.&lt;/p&gt;
+
+&lt;h3 id=&quot;pull-request&quot;&gt;Pull Request&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/JdeRobot/RoboticsAcademy/compare/melodic...predator4hack:pick-place-without-rivz?expand=1&quot;&gt;Pick &amp;amp; Place (Gazebo + Console)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/JdeRobot/RoboticsAcademy/pull/1153&quot;&gt;Pick &amp;amp; Place (Gazebo + Console + Rviz)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/JdeRobot/RoboticsAcademy/pull/1163&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;progress&quot;&gt;Progress&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Exercise is working along with simulation on RADI 2.3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;improvements&quot;&gt;Improvements&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Migrate the exercise to RADI 2.4&lt;/li&gt;
+  &lt;li&gt;The user can stop the simulation at any moment by using the Stop button in the web-templates. However, because the APIs are called in pick and place grasp APIs, the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions’ enhancements, as the simulation will cease as soon as we press the stop button (This may be achived using threading).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;simulation&quot;&gt;Simulation&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.youtube.com/watch?v=1rrcCzl-JWI&quot; alt=&quot;hello&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;machine-vision&quot;&gt;Machine Vision&lt;/h2&gt;
+
+&lt;p&gt;The goal of this exercise is to learn how to use vision to assist industrial robot by detecting known objects and unknown obstacles.&lt;/p&gt;
+
+&lt;h3 id=&quot;pull-request-1&quot;&gt;Pull Request&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/predator4hack/RoboticsAcademy/tree/machine-vision&quot;&gt;Machine Vision (Gazebo + Console)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/predator4hack/RoboticsAcademy/tree/rviz-machine-vision&quot;&gt;Machine Vision (GAzebo + Console + Rviz)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/predator4hack/RoboticsAcademy/tree/machine_vision_doc&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;progress-1&quot;&gt;Progress&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Exercise is migrated to web-templates along with Rviz&lt;/li&gt;
+  &lt;li&gt;HAL/ENV APIs are working&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;improvements-1&quot;&gt;Improvements&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Need to resolve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;simulation-1&quot;&gt;Simulation&lt;/h3&gt;
+
+&lt;h2 id=&quot;mobile-manipulation&quot;&gt;Mobile Manipulation&lt;/h2&gt;
+
+&lt;p&gt;The goal of this exercise is to practice integrating navigation and manipulation. The mobile manipulator is MMO-500 robot from &lt;a href=&quot;https://www.neobotix-robots.com/homepage&quot;&gt;Neobotix&lt;/a&gt;. They provides a set of ROS simulation packages and tutorials to test their mobile robot and mobile manipulators. The MMO-500 is one of them, combining the omnidirectional robot MPO-500 with a light-weight robot arm UR10. The navigation part of this exercise is based on their provided packages.&lt;/p&gt;
+
+&lt;h3 id=&quot;pull-request-2&quot;&gt;Pull Request&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation&quot;&gt;Mobile Manipulation (Gazebo + Console + Rviz)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation_doc&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;improvements-2&quot;&gt;Improvements&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Need to resolve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ERROR: Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;simulation-2&quot;&gt;Simulation&lt;/h3&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="Evaluation" /><summary type="html">Robotics-Academy is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</summary></entry><entry><title type="html">Week 10</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html" rel="alternate" type="text/html" title="Week 10" /><published>2021-08-15T00:00:00+05:30</published><updated>2021-08-15T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html">&lt;h2 id=&quot;libgazebo_ros_moveit_planning_scene&quot;&gt;libgazebo_ros_moveit_planning_scene&lt;/h2&gt;
 
 &lt;p&gt;While connecting with Mobile Manipulation exercise, we were facing two errors and one of them was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory&lt;/code&gt;. As mentioned in the previous blogs, this is a model plugin which broadcasts Moveit PlanningScene messages so that the planning scene stays up-to-date with the world simulation. This is useful if you want to “fake” perfect perception of the environment. Yijia Wu found this plugin ros_simulation repository along with the &lt;a href=&quot;https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713&quot;&gt;pull request&lt;/a&gt; in which this plugin was integrated in ros_simulation in kinetic-devel&lt;/p&gt;
 
@@ -396,47 +475,4 @@ socket.error: [Errno 98] Address already in use
 
 &lt;p&gt;Following discussions with mentors, we decided to use automated build for the industrial robots repo, so that the Docker hub can automatically generate images from source code in the pick &amp;amp; place branch and push the finalized image to the Docker repo. Others will be able to readily access the images with the most recent modifications in the exercise.&lt;/p&gt;
 
-&lt;p&gt;However, there isn’t any official documentation on multi-stage builds on Docker Hub. I tried a few different approaches, such as using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./build.sh&lt;/code&gt; or building both images separately, but none of them worked. So we still have to figure out a way to get this working.&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="Gazebo" /><category term="Rviz" /><category term="Git" /><summary type="html">Version Control</summary></entry><entry><title type="html">Week 1</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/14/week-1.html" rel="alternate" type="text/html" title="Week 1" /><published>2021-06-14T00:00:00+05:30</published><updated>2021-06-14T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/14/week-1</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/06/14/week-1.html">&lt;h2 id=&quot;pyqt5-gui&quot;&gt;PyQt5 GUI&lt;/h2&gt;
-
-&lt;p&gt;This is the first week of coding period, so I started with designing UI for the web-templates. I began by making a simple PyQt5 GUI for a pick-and-place exercise.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://pypi.org/project/PyQt5/&quot;&gt;PyQt5&lt;/a&gt; is a comprehensive set of Python bindings for Qt v5. It is implemented as more than 35 extension modules and enables Python to be used as an alternative application development language to C++ on all supported platforms including iOS and Android.&lt;/p&gt;
-
-&lt;p&gt;Since the pick and place exercise necessitates heavy use of Gazebo and Rviz, I positioned their displays side by side so that users would not experience difficulty scrolling or changing tabs. The basic design of a GUI is seen in the figure below.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLWx2n5MObEVKrncL5s_B7nPFv2eOjukyPI9xXUSshKFViKBIj-ycHhLrHhFJwB_gKJm2IpHeVNYU_B5NZdgkuaoAXzqj2LOOBEKNnymqVAZqpOPZFnkE5VptXJ_ZZ29kaMOK05cgf1yScJ1CeumRdzK=w1093-h838-no?authuser=0&quot; width=&quot;400&quot; height=&quot;320&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Since Robotics Academy has shifted to web-templates, we will no longer be working on PyQt5 GUIs and will instead focus on improving the web-templates of current exercises.&lt;/p&gt;
-
-&lt;h2 id=&quot;adding-cards-for-pick-and-place-exercise&quot;&gt;Adding cards for pick and place exercise&lt;/h2&gt;
-
-&lt;p&gt;To include a new exercise, one needs to add the folder with the exercise contents in exercises/static/exercises following the file name conventions. Then, create the entry in db.sqlite3. A simple way to do this is by using the Django admin page:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run python3.8 manage.py runserver.&lt;/li&gt;
-  &lt;li&gt;Access http://127.0.0.1:8000/admin/ on a browser and log in with “user” and “pass”.&lt;/li&gt;
-  &lt;li&gt;Click on “add exercise” and fill the fields: exercise id (folder name), name (name to display), state, language and description (description to display). Save and exit.&lt;/li&gt;
-  &lt;li&gt;Commit db.sqlite3 changes.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLVrF3YhZwbceQKJyHGylb7zUgWt_DlFMvD9puJkHnC3WFEV1i2Q797SwGwnJ5Mq41iAbLRN01vGW8kZ_2xdo_N5voI7qx-D83xYY2kG6jmxNWkVe99TLG5098JqSEbVrp01ezhNT2BPARuLbCOSxcLC=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;user-interface-for-pick-and-place-exercise&quot;&gt;User Interface for pick and place exercise&lt;/h2&gt;
-
-&lt;p&gt;I began working on the exercise’s User Interface after generating a card for pick and place. In this exercise, we have two options: we may use a Rviz display or we can abstract all of Rviz’s functions and develop an Industrial Robot Teleoperator that just provides the functionality required by the exercise, such as forward and inverse kinematics. We intend to use Rviz because other exercises may require it.&lt;/p&gt;
-
-&lt;p&gt;The pick and place exercise is depicted in the image below. Rviz, on the other hand, has yet to be exposed on a VNC display. Following a discussion with my mentors, we agreed to make this a higher priority and get it up and running within the next week.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUFxSNYpdnPtqpaNu98OJ-V_SQJCEEwZ-pKYSrgJVvaV6DDJlHBKEvD5529VLnQdcnTH53Cc9IRPt9E1EjZ9_Y_WlvLDtWDbupIYKp3u5ottIzNZdULs2HL2Cmcdbnei9ixN5bsK_0K1HUeBp0qdn7f=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;update-the-current-work-on-docker-hub&quot;&gt;Update the current work on docker hub&lt;/h2&gt;
-
-&lt;h2 id=&quot;meet-1&quot;&gt;Meet 1&lt;/h2&gt;
-
-&lt;p&gt;Minutes of the meet:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Create a docker image, upload it on docker hub, and mention the details in week 1 blog.&lt;/li&gt;
-  &lt;li&gt;Incorporate Gazebo in the current template&lt;/li&gt;
-  &lt;li&gt;Incorporate Rviz in the current template&lt;/li&gt;
-  &lt;li&gt;Notify once blog is updated on the slack channel&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="PyQt5" /><category term="Frontend" /><category term="UI/UX" /><category term="Meet" /><summary type="html">PyQt5 GUI</summary></entry></feed>
+&lt;p&gt;However, there isn’t any official documentation on multi-stage builds on Docker Hub. I tried a few different approaches, such as using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./build.sh&lt;/code&gt; or building both images separately, but none of them worked. So we still have to figure out a way to get this working.&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="Gazebo" /><category term="Rviz" /><category term="Git" /><summary type="html">Version Control</summary></entry></feed>

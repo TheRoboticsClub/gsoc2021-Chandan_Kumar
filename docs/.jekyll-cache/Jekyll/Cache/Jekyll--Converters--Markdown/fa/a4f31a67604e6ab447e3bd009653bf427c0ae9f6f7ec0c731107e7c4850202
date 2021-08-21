@@ -1,0 +1,81 @@
+I"<p><a href="https://jderobot.github.io/RoboticsAcademy/">Robotics-Academy</a> is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</p>
+
+<p>The main goal of this project was to migrate three industrial robots exercises(i.e. Pick &amp; Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.</p>
+
+<h2 id="pick--place-exercise">Pick &amp; Place Exercise</h2>
+
+<p>The goal of this exercise is to learn the underlying infrastructure of Industrial Robot exercises(ROS + MoveIt + Industrial Robotics API) and get familiar with the key components needed for more complex exercises by completing the task of pick and place multiple objects and classify them by color or shape.</p>
+
+<h3 id="pull-request">Pull Request</h3>
+
+<ul>
+  <li><a href="https://github.com/JdeRobot/RoboticsAcademy/compare/melodic...predator4hack:pick-place-without-rivz?expand=1">Pick &amp; Place (Gazebo + Console)</a></li>
+  <li><a href="https://github.com/JdeRobot/RoboticsAcademy/pull/1153">Pick &amp; Place (Gazebo + Console + Rviz)</a></li>
+  <li><a href="https://github.com/JdeRobot/RoboticsAcademy/pull/1163">Documentation</a></li>
+</ul>
+
+<h3 id="progress">Progress</h3>
+
+<ul>
+  <li>Exercise is working along with simulation on RADI 2.3</li>
+</ul>
+
+<h3 id="improvements">Improvements</h3>
+
+<ul>
+  <li>Migrate the exercise to RADI 2.4</li>
+  <li>The user can stop the simulation at any moment by using the Stop button in the web-templates. However, because the APIs are called in pick and place grasp APIs, the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions’ enhancements, as the simulation will cease as soon as we press the stop button (This may be achived using threading).</li>
+</ul>
+
+<h3 id="simulation">Simulation</h3>
+
+<p><img src="https://www.youtube.com/watch?v=1rrcCzl-JWI" alt="hello" /></p>
+
+<h2 id="machine-vision">Machine Vision</h2>
+
+<p>The goal of this exercise is to learn how to use vision to assist industrial robot by detecting known objects and unknown obstacles.</p>
+
+<h3 id="pull-request-1">Pull Request</h3>
+
+<ul>
+  <li><a href="https://github.com/predator4hack/RoboticsAcademy/tree/machine-vision">Machine Vision (Gazebo + Console)</a></li>
+  <li><a href="https://github.com/predator4hack/RoboticsAcademy/tree/rviz-machine-vision">Machine Vision (GAzebo + Console + Rviz)</a></li>
+  <li><a href="https://github.com/predator4hack/RoboticsAcademy/tree/machine_vision_doc">Documentation</a></li>
+</ul>
+
+<h3 id="progress-1">Progress</h3>
+
+<ul>
+  <li>Exercise is migrated to web-templates along with Rviz</li>
+  <li>HAL/ENV APIs are working</li>
+</ul>
+
+<h3 id="improvements-1">Improvements</h3>
+
+<ul>
+  <li>Need to resolve : <code class="language-plaintext highlighter-rouge">ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)</code></li>
+  <li></li>
+</ul>
+
+<h3 id="simulation-1">Simulation</h3>
+
+<h2 id="mobile-manipulation">Mobile Manipulation</h2>
+
+<p>The goal of this exercise is to practice integrating navigation and manipulation. The mobile manipulator is MMO-500 robot from <a href="https://www.neobotix-robots.com/homepage">Neobotix</a>. They provides a set of ROS simulation packages and tutorials to test their mobile robot and mobile manipulators. The MMO-500 is one of them, combining the omnidirectional robot MPO-500 with a light-weight robot arm UR10. The navigation part of this exercise is based on their provided packages.</p>
+
+<h3 id="pull-request-2">Pull Request</h3>
+
+<ul>
+  <li><a href="https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation">Mobile Manipulation (Gazebo + Console + Rviz)</a></li>
+  <li><a href="https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation_doc">Documentation</a></li>
+</ul>
+
+<h3 id="improvements-2">Improvements</h3>
+
+<ul>
+  <li>Need to resolve : <code class="language-plaintext highlighter-rouge">ERROR: Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)</code></li>
+  <li></li>
+</ul>
+
+<h3 id="simulation-2">Simulation</h3>
+:ET
