@@ -31,7 +31,7 @@ The goal of this exercise is to learn the underlying infrastructure of Industria
 
 ### Simulation
 
-![hello](https://www.youtube.com/watch?v=1rrcCzl-JWI)
+[Demo of pick and place exercise](https://www.youtube.com/watch?v=1rrcCzl-JWI)
 
 ## Machine Vision
 
@@ -51,9 +51,15 @@ The goal of this exercise is to learn how to use vision to assist industrial rob
 ### Improvements
 
 - Need to resolve : `ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)`
-- 
+
+    Steps taken to resolve this issue:
+    - According to this [post](https://github.com/microsoft/AirSim/issues/2591), the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn't seem to work.
+    - Directly installed pcl driver - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.
+    - Added the path of this driver directly in the enviornemnt variable but this didn't worked.
 
 ### Simulation
+
+[Demo video of the progress](https://youtu.be/YgRQSqbyP3s) 
 
 ## Mobile Manipulation
 
@@ -67,6 +73,19 @@ The goal of this exercise is to practice integrating navigation and manipulation
 ### Improvements
 
 - Need to resolve : `ERROR: Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)`
+
+    Steps taken to resolve this issue:
+    - According to this [post](https://github.com/microsoft/AirSim/issues/2591), the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn't seem to work.
+    - Directly installed cob driver - Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.
+    - Added the path of this driver directly in the enviornemnt variable but this didn't worked.
+
 - 
 
+- Need to resolove : `Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory`
+
+    Steps taken to resolve this issue:
+    - In this pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).
+
 ### Simulation
+
+[Demo video of the progress](https://youtu.be/BKCUI70vJnc)

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-21T18:45:03+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">GSoC’21 Summary</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html" rel="alternate" type="text/html" title="GSoC’21 Summary" /><published>2021-08-21T00:00:00+05:30</published><updated>2021-08-21T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html">&lt;p&gt;&lt;a href=&quot;https://jderobot.github.io/RoboticsAcademy/&quot;&gt;Robotics-Academy&lt;/a&gt; is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-22T13:10:58+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">GSoC’21 Summary</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html" rel="alternate" type="text/html" title="GSoC’21 Summary" /><published>2021-08-21T00:00:00+05:30</published><updated>2021-08-21T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html">&lt;p&gt;&lt;a href=&quot;https://jderobot.github.io/RoboticsAcademy/&quot;&gt;Robotics-Academy&lt;/a&gt; is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.&lt;/p&gt;
 
 &lt;p&gt;The main goal of this project was to migrate three industrial robots exercises(i.e. Pick &amp;amp; Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.&lt;/p&gt;
 
@@ -29,7 +29,7 @@
 
 &lt;h3 id=&quot;simulation&quot;&gt;Simulation&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://www.youtube.com/watch?v=1rrcCzl-JWI&quot; alt=&quot;hello&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1rrcCzl-JWI&quot;&gt;Demo of pick and place exercise&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;machine-vision&quot;&gt;Machine Vision&lt;/h2&gt;
 
@@ -53,11 +53,21 @@
 &lt;h3 id=&quot;improvements-1&quot;&gt;Improvements&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Need to resolve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Need to resolve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Steps taken to resolve this issue:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;According to this &lt;a href=&quot;https://github.com/microsoft/AirSim/issues/2591&quot;&gt;post&lt;/a&gt;, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.&lt;/li&gt;
+      &lt;li&gt;Directly installed pcl driver - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.&lt;/li&gt;
+      &lt;li&gt;Added the path of this driver directly in the enviornemnt variable but this didn’t worked.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;simulation-1&quot;&gt;Simulation&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/YgRQSqbyP3s&quot;&gt;Demo video of the progress&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;mobile-manipulation&quot;&gt;Mobile Manipulation&lt;/h2&gt;
 
@@ -73,11 +83,30 @@
 &lt;h3 id=&quot;improvements-2&quot;&gt;Improvements&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Need to resolve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ERROR: Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Need to resolve : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ERROR: Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Steps taken to resolve this issue:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;According to this &lt;a href=&quot;https://github.com/microsoft/AirSim/issues/2591&quot;&gt;post&lt;/a&gt;, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.&lt;/li&gt;
+      &lt;li&gt;Directly installed cob driver - Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.&lt;/li&gt;
+      &lt;li&gt;Added the path of this driver directly in the enviornemnt variable but this didn’t worked.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Need to resolove : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Steps taken to resolve this issue:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;In this pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;simulation-2&quot;&gt;Simulation&lt;/h3&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="Evaluation" /><summary type="html">Robotics-Academy is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</summary></entry><entry><title type="html">Week 10</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html" rel="alternate" type="text/html" title="Week 10" /><published>2021-08-15T00:00:00+05:30</published><updated>2021-08-15T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html">&lt;h2 id=&quot;libgazebo_ros_moveit_planning_scene&quot;&gt;libgazebo_ros_moveit_planning_scene&lt;/h2&gt;
+&lt;h3 id=&quot;simulation-2&quot;&gt;Simulation&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/BKCUI70vJnc&quot;&gt;Demo video of the progress&lt;/a&gt;&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="Evaluation" /><summary type="html">Robotics-Academy is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</summary></entry><entry><title type="html">Week 10</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html" rel="alternate" type="text/html" title="Week 10" /><published>2021-08-15T00:00:00+05:30</published><updated>2021-08-15T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html">&lt;h2 id=&quot;libgazebo_ros_moveit_planning_scene&quot;&gt;libgazebo_ros_moveit_planning_scene&lt;/h2&gt;
 
 &lt;p&gt;While connecting with Mobile Manipulation exercise, we were facing two errors and one of them was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory&lt;/code&gt;. As mentioned in the previous blogs, this is a model plugin which broadcasts Moveit PlanningScene messages so that the planning scene stays up-to-date with the world simulation. This is useful if you want to “fake” perfect perception of the environment. Yijia Wu found this plugin ros_simulation repository along with the &lt;a href=&quot;https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713&quot;&gt;pull request&lt;/a&gt; in which this plugin was integrated in ros_simulation in kinetic-devel&lt;/p&gt;
 
@@ -89,7 +118,7 @@
 
 &lt;p&gt;As we decided to create a separate pull request integrating Rviz in Machine Vision exercise, I started working on it this week. After exposing VNC display, creating a launch file and some APIs to spawn the objects, Rviz was ready and working fluwntly. The integrated rviz window can be seen in the image below:&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLWOUnZULcXz0pJrhEwjOXSnG0VLAkaC0cEeCmfQ8ni7eIo9MwmCONn5VtJjsM9RBDQ39zSaJPvQ1PIJiZD2s3KSGCza-kSoWm1KOfGxbYG6MOr_W16vvvQTAeFkuFNXWysjpwtwj0ofxh091kf-zhcV=w1583-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;testing-exercises&quot;&gt;Testing Exercises&lt;/h2&gt;
 
@@ -118,7 +147,7 @@ while True:
 
 &lt;p&gt;On testing the exercise with the code above, I found that the arm went to the home position but didn’t moved from there. On checking the console, it showed &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Attribute error: x is of None type&lt;/code&gt;. This is caused because pcl node isn’t working and due to which the octomap wasn’t created and the oject wasn’t detected.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLWrbf-Uw2BI8_vrFqvoMBgdvywLB-SwC1wEgps5gzba5RR5dao5slrZWLaiOiRqGPMjgXjZGouZRC5Ecv082cNQDM8eTwMCcPj8mMK_h6iQzK7DL7UT7-TigdmsmSd-8n_IOTmVV-jWWgHcEOVDwScS=w1567-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;mobile-manipulation-exercise&quot;&gt;Mobile Manipulation Exercise&lt;/h3&gt;
 
@@ -159,7 +188,7 @@ while True:
 
 &lt;p&gt;The biggest problem in testing the code in Mobile Manipulation exercise was that the exercise wasn’t connecting everytime I tried to connect the exercise.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0&quot; /&gt;&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="libgazebo_ros_moveit" /><summary type="html">libgazebo_ros_moveit_planning_scene</summary></entry><entry><title type="html">Week 9</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9.html" rel="alternate" type="text/html" title="Week 9" /><published>2021-08-08T00:00:00+05:30</published><updated>2021-08-08T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9.html">&lt;h2 id=&quot;machine-vision&quot;&gt;Machine Vision&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/pw/AM-JKLXnAZds2qYr92ATV6ZUg1h7oKwhjtCeEAyWzhJlRVy8UlGTDJMv_NeR_oUkx2SYtxWfidaZXlNOTCkTscqaVocCTszrcl-TcMaRQXYLgN25eeM8CoOaZFpYNqcwmJjyVf6_ZdZBZbyds5gf8SItuDB2=w1920-h550-no?authuser=0&quot; /&gt;&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="libgazebo_ros_moveit" /><summary type="html">libgazebo_ros_moveit_planning_scene</summary></entry><entry><title type="html">Week 9</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9.html" rel="alternate" type="text/html" title="Week 9" /><published>2021-08-08T00:00:00+05:30</published><updated>2021-08-08T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/08/week-9.html">&lt;h2 id=&quot;machine-vision&quot;&gt;Machine Vision&lt;/h2&gt;
 
 &lt;p&gt;We considered having a separate pull request for Rviz during last week’s meeting so that other developers can incorporate it into other exercises more easily. We decided to implement this with Machine Vision exercise because Pick And Place exercise was already integrated with Rviz. As a result, I’ll need to first create a pull request for Machine vision exercise moved to web-templates without Rviz, and then another pull request to add Rviz as a feature.&lt;/p&gt;
 

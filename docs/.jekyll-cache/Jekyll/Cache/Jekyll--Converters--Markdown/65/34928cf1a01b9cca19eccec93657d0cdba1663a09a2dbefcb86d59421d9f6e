@@ -1,4 +1,4 @@
-I"<p><a href="https://jderobot.github.io/RoboticsAcademy/">Robotics-Academy</a> is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</p>
+I"<p><a href="https://jderobot.github.io/RoboticsAcademy/">Robotics-Academy</a> is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</p>
 
 <p>The main goal of this project was to migrate three industrial robots exercises(i.e. Pick &amp; Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.</p>
 
@@ -29,7 +29,7 @@
 
 <h3 id="simulation">Simulation</h3>
 
-<p><img src="https://www.youtube.com/watch?v=1rrcCzl-JWI" alt="hello" /></p>
+<p><a href="https://www.youtube.com/watch?v=1rrcCzl-JWI">Demo of pick and place exercise</a></p>
 
 <h2 id="machine-vision">Machine Vision</h2>
 
@@ -53,11 +53,21 @@
 <h3 id="improvements-1">Improvements</h3>
 
 <ul>
-  <li>Need to resolve : <code class="language-plaintext highlighter-rouge">ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)</code></li>
-  <li></li>
+  <li>
+    <p>Need to resolve : <code class="language-plaintext highlighter-rouge">ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)</code></p>
+
+    <p>Steps taken to resolve this issue:</p>
+    <ul>
+      <li>According to this <a href="https://github.com/microsoft/AirSim/issues/2591">post</a>, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.</li>
+      <li>Directly installed pcl driver - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.</li>
+      <li>Added the path of this driver directly in the enviornemnt variable but this didn’t worked.</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="simulation-1">Simulation</h3>
+
+<p><a href="https://youtu.be/YgRQSqbyP3s">Demo video of the progress</a></p>
 
 <h2 id="mobile-manipulation">Mobile Manipulation</h2>
 
@@ -73,9 +83,28 @@
 <h3 id="improvements-2">Improvements</h3>
 
 <ul>
-  <li>Need to resolve : <code class="language-plaintext highlighter-rouge">ERROR: Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)</code></li>
+  <li>
+    <p>Need to resolve : <code class="language-plaintext highlighter-rouge">ERROR: Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)</code></p>
+
+    <p>Steps taken to resolve this issue:</p>
+    <ul>
+      <li>According to this <a href="https://github.com/microsoft/AirSim/issues/2591">post</a>, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.</li>
+      <li>Directly installed cob driver - Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.</li>
+      <li>Added the path of this driver directly in the enviornemnt variable but this didn’t worked.</li>
+    </ul>
+  </li>
   <li></li>
+  <li>
+    <p>Need to resolove : <code class="language-plaintext highlighter-rouge">Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory</code></p>
+
+    <p>Steps taken to resolve this issue:</p>
+    <ul>
+      <li>In this pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="simulation-2">Simulation</h3>
+
+<p><a href="https://youtu.be/BKCUI70vJnc">Demo video of the progress</a></p>
 :ET

@@ -10,7 +10,7 @@
 
 <p>As we decided to create a separate pull request integrating Rviz in Machine Vision exercise, I started working on it this week. After exposing VNC display, creating a launch file and some APIs to spawn the objects, Rviz was ready and working fluwntly. The integrated rviz window can be seen in the image below:</p>
 
-<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0" /></p>
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWOUnZULcXz0pJrhEwjOXSnG0VLAkaC0cEeCmfQ8ni7eIo9MwmCONn5VtJjsM9RBDQ39zSaJPvQ1PIJiZD2s3KSGCza-kSoWm1KOfGxbYG6MOr_W16vvvQTAeFkuFNXWysjpwtwj0ofxh091kf-zhcV=w1583-h903-no?authuser=0" /></p>
 
 <h2 id="testing-exercises">Testing Exercises</h2>
 
@@ -39,7 +39,7 @@ while True:
 
 <p>On testing the exercise with the code above, I found that the arm went to the home position but didn’t moved from there. On checking the console, it showed <code class="language-plaintext highlighter-rouge">Attribute error: x is of None type</code>. This is caused because pcl node isn’t working and due to which the octomap wasn’t created and the oject wasn’t detected.</p>
 
-<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0" /></p>
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWrbf-Uw2BI8_vrFqvoMBgdvywLB-SwC1wEgps5gzba5RR5dao5slrZWLaiOiRqGPMjgXjZGouZRC5Ecv082cNQDM8eTwMCcPj8mMK_h6iQzK7DL7UT7-TigdmsmSd-8n_IOTmVV-jWWgHcEOVDwScS=w1567-h903-no?authuser=0" /></p>
 
 <h3 id="mobile-manipulation-exercise">Mobile Manipulation Exercise</h3>
 
@@ -80,5 +80,5 @@ while True:
 
 <p>The biggest problem in testing the code in Mobile Manipulation exercise was that the exercise wasn’t connecting everytime I tried to connect the exercise.</p>
 
-<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUV_SfIwT_sIXfTgVmX5S5VzfF7vagCu5VfwUlbexy97djYlmM9YuxztOVajKKQNCyXUlCQdmEYcTpkabfDmfpt0yRuNzGSWoionoohfKXD7iK1DPNX50UgvpaWkWK4ClLhF7Zm5bxYK_YhfYL9bX-T=w1605-h903-no?authuser=0" /></p>
+<p align="center"><img src="https://lh3.googleusercontent.com/pw/AM-JKLXnAZds2qYr92ATV6ZUg1h7oKwhjtCeEAyWzhJlRVy8UlGTDJMv_NeR_oUkx2SYtxWfidaZXlNOTCkTscqaVocCTszrcl-TcMaRQXYLgN25eeM8CoOaZFpYNqcwmJjyVf6_ZdZBZbyds5gf8SItuDB2=w1920-h550-no?authuser=0" /></p>
 :ET
