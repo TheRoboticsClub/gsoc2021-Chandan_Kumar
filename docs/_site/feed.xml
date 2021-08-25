@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-25T18:52:22+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">GSoC’21 Summary</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html" rel="alternate" type="text/html" title="GSoC’21 Summary" /><published>2021-08-21T00:00:00+05:30</published><updated>2021-08-21T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html">&lt;p&gt;&lt;a href=&quot;https://jderobot.github.io/RoboticsAcademy/&quot;&gt;Robotics-Academy&lt;/a&gt; is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-25T19:07:18+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">GSoC’21 Summary</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html" rel="alternate" type="text/html" title="GSoC’21 Summary" /><published>2021-08-21T00:00:00+05:30</published><updated>2021-08-21T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html">&lt;p&gt;&lt;a href=&quot;https://jderobot.github.io/RoboticsAcademy/&quot;&gt;Robotics-Academy&lt;/a&gt; is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.&lt;/p&gt;
 
 &lt;p&gt;The main goal of this project was to migrate three industrial robots exercises(i.e. Pick &amp;amp; Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.&lt;/p&gt;
 
@@ -29,14 +29,6 @@
 
 &lt;ul&gt;
   &lt;li&gt;Exercise is working along with simulation on RADI 2.4&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;future-works&quot;&gt;Future Works&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Migrate the exercise to RADI 3&lt;/li&gt;
-  &lt;li&gt;Integrate RQT window in the exercise&lt;/li&gt;
-  &lt;li&gt;The user can stop the simulation at any moment by using the Stop button in the web-templates. However, because the APIs are called in pick and place grasp APIs, the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions’ enhancements, as the simulation will cease as soon as we press the stop button (This may be achived using threading).&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;simulation&quot;&gt;Simulation&lt;/h3&gt;
@@ -77,14 +69,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;future-works-1&quot;&gt;Future Works&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Migrate the exercise to RADI 3&lt;/li&gt;
-  &lt;li&gt;Integrate rqt window in the exercise
-    &lt;h3 id=&quot;simulation-1&quot;&gt;Simulation&lt;/h3&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3 id=&quot;simulation-1&quot;&gt;Simulation&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://youtu.be/YgRQSqbyP3s&quot;&gt;Demo video of the progress&lt;/a&gt;&lt;/p&gt;
 
@@ -123,16 +108,17 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;future-works-2&quot;&gt;Future Works&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Migrate exercise to RADI 3&lt;/li&gt;
-  &lt;li&gt;Integrate RQT window in the exercise&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h3 id=&quot;simulation-2&quot;&gt;Simulation&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://youtu.be/BKCUI70vJnc&quot;&gt;Demo video of the progress&lt;/a&gt;&lt;/p&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="Evaluation" /><summary type="html">Robotics-Academy is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</summary></entry><entry><title type="html">Week 10</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html" rel="alternate" type="text/html" title="Week 10" /><published>2021-08-15T00:00:00+05:30</published><updated>2021-08-15T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html">&lt;h2 id=&quot;libgazebo_ros_moveit_planning_scene&quot;&gt;libgazebo_ros_moveit_planning_scene&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/BKCUI70vJnc&quot;&gt;Demo video of the progress&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;future-works&quot;&gt;Future Works&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Migrate the exercise to RADI 3&lt;/li&gt;
+  &lt;li&gt;Integrate RQT window in the exercise&lt;/li&gt;
+  &lt;li&gt;The user can stop the simulation at any moment by using the Stop button in the web-templates. However, grasp APIs are being called in some of the exercises due to which the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions’ enhancements where the simulation will cease as soon as we press the stop button (This may be achived using threading).&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>predator4hack</name></author><category term="coding period" /><category term="Evaluation" /><summary type="html">Robotics-Academy is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</summary></entry><entry><title type="html">Week 10</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html" rel="alternate" type="text/html" title="Week 10" /><published>2021-08-15T00:00:00+05:30</published><updated>2021-08-15T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/15/week-10.html">&lt;h2 id=&quot;libgazebo_ros_moveit_planning_scene&quot;&gt;libgazebo_ros_moveit_planning_scene&lt;/h2&gt;
 
 &lt;p&gt;While connecting with Mobile Manipulation exercise, we were facing two errors and one of them was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory&lt;/code&gt;. As mentioned in the previous blogs, this is a model plugin which broadcasts Moveit PlanningScene messages so that the planning scene stays up-to-date with the world simulation. This is useful if you want to “fake” perfect perception of the environment. Yijia Wu found this plugin ros_simulation repository along with the &lt;a href=&quot;https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713&quot;&gt;pull request&lt;/a&gt; in which this plugin was integrated in ros_simulation in kinetic-devel&lt;/p&gt;
 

@@ -1,4 +1,4 @@
-I"0<p><a href="https://jderobot.github.io/RoboticsAcademy/">Robotics-Academy</a> is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</p>
+I"$<p><a href="https://jderobot.github.io/RoboticsAcademy/">Robotics-Academy</a> is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</p>
 
 <p>The main goal of this project was to migrate three industrial robots exercises(i.e. Pick &amp; Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.</p>
 
@@ -29,14 +29,6 @@
 
 <ul>
   <li>Exercise is working along with simulation on RADI 2.4</li>
-</ul>
-
-<h3 id="future-works">Future Works</h3>
-
-<ul>
-  <li>Migrate the exercise to RADI 3</li>
-  <li>Integrate RQT window in the exercise</li>
-  <li>The user can stop the simulation at any moment by using the Stop button in the web-templates. However, because the APIs are called in pick and place grasp APIs, the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions’ enhancements, as the simulation will cease as soon as we press the stop button (This may be achived using threading).</li>
 </ul>
 
 <h3 id="simulation">Simulation</h3>
@@ -77,14 +69,7 @@
   </li>
 </ul>
 
-<h3 id="future-works-1">Future Works</h3>
-
-<ul>
-  <li>Migrate the exercise to RADI 3</li>
-  <li>Integrate rqt window in the exercise
-    <h3 id="simulation-1">Simulation</h3>
-  </li>
-</ul>
+<h3 id="simulation-1">Simulation</h3>
 
 <p><a href="https://youtu.be/YgRQSqbyP3s">Demo video of the progress</a></p>
 
@@ -118,19 +103,20 @@
 
     <p>Steps taken to resolve this issue:</p>
     <ul>
-      <li><strong>Added libgazebo_ros_moveit_planning_scene from a git repo</strong> : In <a href="https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713">this</a> pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).</li>
+      <li><strong>Added libgazebo_ros_moveit_planning_scene from a git repo</strong> : In <a href="https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713">this</a> pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).
+        <h3 id="simulation-2">Simulation</h3>
+      </li>
     </ul>
   </li>
 </ul>
 
-<h3 id="future-works-2">Future Works</h3>
+<p><a href="https://youtu.be/BKCUI70vJnc">Demo video of the progress</a></p>
+
+<h2 id="future-works">Future Works</h2>
 
 <ul>
-  <li>Migrate exercise to RADI 3</li>
+  <li>Migrate the exercise to RADI 3</li>
   <li>Integrate RQT window in the exercise</li>
+  <li>The user can stop the simulation at any moment by using the Stop button in the web-templates. However, grasp APIs are being called in some of the exercises due to which the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions’ enhancements where the simulation will cease as soon as we press the stop button (This may be achived using threading).</li>
 </ul>
-
-<h3 id="simulation-2">Simulation</h3>
-
-<p><a href="https://youtu.be/BKCUI70vJnc">Demo video of the progress</a></p>
 :ET

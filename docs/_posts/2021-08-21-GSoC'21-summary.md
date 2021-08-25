@@ -33,12 +33,6 @@ The goal of this exercise is to learn the underlying infrastructure of Industria
 
 - Exercise is working along with simulation on RADI 2.4
 
-### Future Works
-
-- Migrate the exercise to RADI 3
-- Integrate RQT window in the exercise
-- The user can stop the simulation at any moment by using the Stop button in the web-templates. However, because the APIs are called in pick and place grasp APIs, the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions' enhancements, as the simulation will cease as soon as we press the stop button (This may be achived using threading).
-
 ### Simulation
 
 [Demo of pick and place exercise](https://www.youtube.com/watch?v=1rrcCzl-JWI)
@@ -67,11 +61,6 @@ The goal of this exercise is to learn how to use vision to assist industrial rob
     - **Installed pcl driver** - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.
     - **Explicitly added paths in the enviornment variables** : Added the path of this driver directly in the enviornemnt variable but this didn't worked.
 
-
-### Future Works
-
-- Migrate the exercise to RADI 3
-- Integrate rqt window in the exercise
 ### Simulation
 
 [Demo video of the progress](https://youtu.be/YgRQSqbyP3s) 
@@ -100,12 +89,13 @@ The goal of this exercise is to practice integrating navigation and manipulation
 
     Steps taken to resolve this issue:
     - **Added libgazebo_ros_moveit_planning_scene from a git repo** : In [this](https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713) pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).
-
-### Future Works
-
-- Migrate exercise to RADI 3
-- Integrate RQT window in the exercise
-
+    
 ### Simulation
 
 [Demo video of the progress](https://youtu.be/BKCUI70vJnc)
+
+## Future Works
+
+- Migrate the exercise to RADI 3
+- Integrate RQT window in the exercise
+- The user can stop the simulation at any moment by using the Stop button in the web-templates. However, grasp APIs are being called in some of the exercises due to which the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions' enhancements where the simulation will cease as soon as we press the stop button (This may be achived using threading).
