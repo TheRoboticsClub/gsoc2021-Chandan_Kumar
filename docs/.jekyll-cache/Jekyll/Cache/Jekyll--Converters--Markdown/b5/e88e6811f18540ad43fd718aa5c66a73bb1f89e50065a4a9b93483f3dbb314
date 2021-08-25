@@ -1,6 +1,17 @@
-I"<p><a href="https://jderobot.github.io/RoboticsAcademy/">Robotics-Academy</a> is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</p>
+I"0<p><a href="https://jderobot.github.io/RoboticsAcademy/">Robotics-Academy</a> is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.</p>
 
 <p>The main goal of this project was to migrate three industrial robots exercises(i.e. Pick &amp; Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.</p>
+
+<h2 id="deliverables">Deliverables</h2>
+
+<ul>
+  <li>Migrated Pick &amp; Place exercise without Rviz from ROS templates to RADI 2.4</li>
+  <li>Integrated Rviz in the pick and place exercise</li>
+  <li>Migrated Machine Vision exercise from ROS templates to RADI 2.4 along with RViz, however an error is yet to be resolved.</li>
+  <li>Migrated Mobile Manipulation exercise from ROS templates to RADI 2.4 along with RViz, however an error is yet to be resolved.</li>
+</ul>
+
+<p>The following sections of this blog will provide a detailed summary of the completion/errors/future works for this project.</p>
 
 <h2 id="pick--place-exercise">Pick &amp; Place Exercise</h2>
 
@@ -17,13 +28,14 @@
 <h3 id="progress">Progress</h3>
 
 <ul>
-  <li>Exercise is working along with simulation on RADI 2.3</li>
+  <li>Exercise is working along with simulation on RADI 2.4</li>
 </ul>
 
-<h3 id="improvements">Improvements</h3>
+<h3 id="future-works">Future Works</h3>
 
 <ul>
-  <li>Migrate the exercise to RADI 2.4</li>
+  <li>Migrate the exercise to RADI 3</li>
+  <li>Integrate RQT window in the exercise</li>
   <li>The user can stop the simulation at any moment by using the Stop button in the web-templates. However, because the APIs are called in pick and place grasp APIs, the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions’ enhancements, as the simulation will cease as soon as we press the stop button (This may be achived using threading).</li>
 </ul>
 
@@ -50,7 +62,7 @@
   <li>HAL/ENV APIs are working</li>
 </ul>
 
-<h3 id="improvements-1">Improvements</h3>
+<h3 id="todo">TODO</h3>
 
 <ul>
   <li>
@@ -58,14 +70,21 @@
 
     <p>Steps taken to resolve this issue:</p>
     <ul>
-      <li>According to this <a href="https://github.com/microsoft/AirSim/issues/2591">post</a>, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.</li>
-      <li>Directly installed pcl driver - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.</li>
-      <li>Added the path of this driver directly in the enviornemnt variable but this didn’t worked.</li>
+      <li><strong>Created ROS Entrypoint</strong> : According to this <a href="https://github.com/microsoft/AirSim/issues/2591">post</a>, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.</li>
+      <li><strong>Installed pcl driver</strong> - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.</li>
+      <li><strong>Explicitly added paths in the enviornment variables</strong> : Added the path of this driver directly in the enviornemnt variable but this didn’t worked.</li>
     </ul>
   </li>
 </ul>
 
-<h3 id="simulation-1">Simulation</h3>
+<h3 id="future-works-1">Future Works</h3>
+
+<ul>
+  <li>Migrate the exercise to RADI 3</li>
+  <li>Integrate rqt window in the exercise
+    <h3 id="simulation-1">Simulation</h3>
+  </li>
+</ul>
 
 <p><a href="https://youtu.be/YgRQSqbyP3s">Demo video of the progress</a></p>
 
@@ -80,7 +99,7 @@
   <li><a href="https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation_doc">Documentation</a></li>
 </ul>
 
-<h3 id="improvements-2">Improvements</h3>
+<h3 id="todo-1">TODO</h3>
 
 <ul>
   <li>
@@ -88,19 +107,27 @@
 
     <p>Steps taken to resolve this issue:</p>
     <ul>
-      <li>According to this <a href="https://github.com/microsoft/AirSim/issues/2591">post</a>, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.</li>
-      <li>Directly installed cob driver - Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.</li>
-      <li>Added the path of this driver directly in the enviornemnt variable but this didn’t worked.</li>
+      <li><strong>Created ROS Entrypoint</strong> : According to this <a href="https://github.com/microsoft/AirSim/issues/2591">post</a>, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.</li>
+      <li><strong>Installed COB driver</strong> : Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.</li>
+      <li><strong>Explicitly added paths in the enviornment variables</strong> : Added the path of this driver directly in the enviornemnt variable but this didn’t worked.</li>
     </ul>
   </li>
+  <li></li>
   <li>
     <p>Need to resolove : <code class="language-plaintext highlighter-rouge">Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory</code></p>
 
     <p>Steps taken to resolve this issue:</p>
     <ul>
-      <li>In this pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).</li>
+      <li><strong>Added libgazebo_ros_moveit_planning_scene from a git repo</strong> : In <a href="https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713">this</a> pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).</li>
     </ul>
   </li>
+</ul>
+
+<h3 id="future-works-2">Future Works</h3>
+
+<ul>
+  <li>Migrate exercise to RADI 3</li>
+  <li>Integrate RQT window in the exercise</li>
 </ul>
 
 <h3 id="simulation-2">Simulation</h3>

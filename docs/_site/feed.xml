@@ -1,6 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-22T13:10:58+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">GSoC’21 Summary</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html" rel="alternate" type="text/html" title="GSoC’21 Summary" /><published>2021-08-21T00:00:00+05:30</published><updated>2021-08-21T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html">&lt;p&gt;&lt;a href=&quot;https://jderobot.github.io/RoboticsAcademy/&quot;&gt;Robotics-Academy&lt;/a&gt; is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/" rel="alternate" type="text/html" /><updated>2021-08-25T18:52:22+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/feed.xml</id><title type="html">GSoC 2021 Blog</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>predator4hack</name></author><entry><title type="html">GSoC’21 Summary</title><link href="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html" rel="alternate" type="text/html" title="GSoC’21 Summary" /><published>2021-08-21T00:00:00+05:30</published><updated>2021-08-21T00:00:00+05:30</updated><id>https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary</id><content type="html" xml:base="https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/coding%20period/2021/08/21/GSoC'21-summary.html">&lt;p&gt;&lt;a href=&quot;https://jderobot.github.io/RoboticsAcademy/&quot;&gt;Robotics-Academy&lt;/a&gt; is an open source collection of exercises and challenges to learn robotics in a practical way. There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc. It is mainly based on Gazebo simulator and ROS.&lt;/p&gt;
 
 &lt;p&gt;The main goal of this project was to migrate three industrial robots exercises(i.e. Pick &amp;amp; Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.&lt;/p&gt;
+
+&lt;h2 id=&quot;deliverables&quot;&gt;Deliverables&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Migrated Pick &amp;amp; Place exercise without Rviz from ROS templates to RADI 2.4&lt;/li&gt;
+  &lt;li&gt;Integrated Rviz in the pick and place exercise&lt;/li&gt;
+  &lt;li&gt;Migrated Machine Vision exercise from ROS templates to RADI 2.4 along with RViz, however an error is yet to be resolved.&lt;/li&gt;
+  &lt;li&gt;Migrated Mobile Manipulation exercise from ROS templates to RADI 2.4 along with RViz, however an error is yet to be resolved.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The following sections of this blog will provide a detailed summary of the completion/errors/future works for this project.&lt;/p&gt;
 
 &lt;h2 id=&quot;pick--place-exercise&quot;&gt;Pick &amp;amp; Place Exercise&lt;/h2&gt;
 
@@ -17,13 +28,14 @@
 &lt;h3 id=&quot;progress&quot;&gt;Progress&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Exercise is working along with simulation on RADI 2.3&lt;/li&gt;
+  &lt;li&gt;Exercise is working along with simulation on RADI 2.4&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;improvements&quot;&gt;Improvements&lt;/h3&gt;
+&lt;h3 id=&quot;future-works&quot;&gt;Future Works&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Migrate the exercise to RADI 2.4&lt;/li&gt;
+  &lt;li&gt;Migrate the exercise to RADI 3&lt;/li&gt;
+  &lt;li&gt;Integrate RQT window in the exercise&lt;/li&gt;
   &lt;li&gt;The user can stop the simulation at any moment by using the Stop button in the web-templates. However, because the APIs are called in pick and place grasp APIs, the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions’ enhancements, as the simulation will cease as soon as we press the stop button (This may be achived using threading).&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -50,7 +62,7 @@
   &lt;li&gt;HAL/ENV APIs are working&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;improvements-1&quot;&gt;Improvements&lt;/h3&gt;
+&lt;h3 id=&quot;todo&quot;&gt;TODO&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -58,14 +70,21 @@
 
     &lt;p&gt;Steps taken to resolve this issue:&lt;/p&gt;
     &lt;ul&gt;
-      &lt;li&gt;According to this &lt;a href=&quot;https://github.com/microsoft/AirSim/issues/2591&quot;&gt;post&lt;/a&gt;, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.&lt;/li&gt;
-      &lt;li&gt;Directly installed pcl driver - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.&lt;/li&gt;
-      &lt;li&gt;Added the path of this driver directly in the enviornemnt variable but this didn’t worked.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Created ROS Entrypoint&lt;/strong&gt; : According to this &lt;a href=&quot;https://github.com/microsoft/AirSim/issues/2591&quot;&gt;post&lt;/a&gt;, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Installed pcl driver&lt;/strong&gt; - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Explicitly added paths in the enviornment variables&lt;/strong&gt; : Added the path of this driver directly in the enviornemnt variable but this didn’t worked.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;simulation-1&quot;&gt;Simulation&lt;/h3&gt;
+&lt;h3 id=&quot;future-works-1&quot;&gt;Future Works&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Migrate the exercise to RADI 3&lt;/li&gt;
+  &lt;li&gt;Integrate rqt window in the exercise
+    &lt;h3 id=&quot;simulation-1&quot;&gt;Simulation&lt;/h3&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://youtu.be/YgRQSqbyP3s&quot;&gt;Demo video of the progress&lt;/a&gt;&lt;/p&gt;
 
@@ -80,7 +99,7 @@
   &lt;li&gt;&lt;a href=&quot;https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation_doc&quot;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;improvements-2&quot;&gt;Improvements&lt;/h3&gt;
+&lt;h3 id=&quot;todo-1&quot;&gt;TODO&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -88,9 +107,9 @@
 
     &lt;p&gt;Steps taken to resolve this issue:&lt;/p&gt;
     &lt;ul&gt;
-      &lt;li&gt;According to this &lt;a href=&quot;https://github.com/microsoft/AirSim/issues/2591&quot;&gt;post&lt;/a&gt;, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.&lt;/li&gt;
-      &lt;li&gt;Directly installed cob driver - Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.&lt;/li&gt;
-      &lt;li&gt;Added the path of this driver directly in the enviornemnt variable but this didn’t worked.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Created ROS Entrypoint&lt;/strong&gt; : According to this &lt;a href=&quot;https://github.com/microsoft/AirSim/issues/2591&quot;&gt;post&lt;/a&gt;, the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn’t seem to work.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Installed COB driver&lt;/strong&gt; : Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Explicitly added paths in the enviornment variables&lt;/strong&gt; : Added the path of this driver directly in the enviornemnt variable but this didn’t worked.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;/li&gt;
@@ -99,9 +118,16 @@
 
     &lt;p&gt;Steps taken to resolve this issue:&lt;/p&gt;
     &lt;ul&gt;
-      &lt;li&gt;In this pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Added libgazebo_ros_moveit_planning_scene from a git repo&lt;/strong&gt; : In &lt;a href=&quot;https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713&quot;&gt;this&lt;/a&gt; pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;future-works-2&quot;&gt;Future Works&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Migrate exercise to RADI 3&lt;/li&gt;
+  &lt;li&gt;Integrate RQT window in the exercise&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;simulation-2&quot;&gt;Simulation&lt;/h3&gt;

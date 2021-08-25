@@ -10,6 +10,15 @@ tags: Evaluation
 
 The main goal of this project was to migrate three industrial robots exercises(i.e. Pick & Place, Machine Vision and Mobile Manipulation) to web-templates and integrate Rviz graphical interface which will allow the user to visualize a lot of information, using plugins for many kinds of available topics.
 
+## Deliverables
+
+- Migrated Pick & Place exercise without Rviz from ROS templates to RADI 2.4
+- Integrated Rviz in the pick and place exercise
+- Migrated Machine Vision exercise from ROS templates to RADI 2.4 along with RViz, however an error is yet to be resolved.
+- Migrated Mobile Manipulation exercise from ROS templates to RADI 2.4 along with RViz, however an error is yet to be resolved.
+
+The following sections of this blog will provide a detailed summary of the completion/errors/future works for this project.
+
 ## Pick & Place Exercise
 
 The goal of this exercise is to learn the underlying infrastructure of Industrial Robot exercises(ROS + MoveIt + Industrial Robotics API) and get familiar with the key components needed for more complex exercises by completing the task of pick and place multiple objects and classify them by color or shape.
@@ -22,11 +31,12 @@ The goal of this exercise is to learn the underlying infrastructure of Industria
 
 ### Progress
 
-- Exercise is working along with simulation on RADI 2.3
+- Exercise is working along with simulation on RADI 2.4
 
-### Improvements
+### Future Works
 
-- Migrate the exercise to RADI 2.4
+- Migrate the exercise to RADI 3
+- Integrate RQT window in the exercise
 - The user can stop the simulation at any moment by using the Stop button in the web-templates. However, because the APIs are called in pick and place grasp APIs, the simulation will only end after the picking/placing operation is done. This may be regarded one of the future versions' enhancements, as the simulation will cease as soon as we press the stop button (This may be achived using threading).
 
 ### Simulation
@@ -48,15 +58,20 @@ The goal of this exercise is to learn how to use vision to assist industrial rob
 - Exercise is migrated to web-templates along with Rviz
 - HAL/ENV APIs are working
 
-### Improvements
+### TODO
 
 - Need to resolve : `ERROR: cannot launch node of type [pcl_filter/pcl_filter_server]: Cannot locate node of type [pcl_filter_server] in package [pcl_filter]. Make sure file exists in package path and permission is set to executable (chmod +x)`
 
     Steps taken to resolve this issue:
-    - According to this [post](https://github.com/microsoft/AirSim/issues/2591), the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn't seem to work.
-    - Directly installed pcl driver - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.
-    - Added the path of this driver directly in the enviornemnt variable but this didn't worked.
+    - **Created ROS Entrypoint** : According to this [post](https://github.com/microsoft/AirSim/issues/2591), the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn't seem to work.
+    - **Installed pcl driver** - Because the pcl driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.
+    - **Explicitly added paths in the enviornment variables** : Added the path of this driver directly in the enviornemnt variable but this didn't worked.
 
+
+### Future Works
+
+- Migrate the exercise to RADI 3
+- Integrate rqt window in the exercise
 ### Simulation
 
 [Demo video of the progress](https://youtu.be/YgRQSqbyP3s) 
@@ -70,21 +85,26 @@ The goal of this exercise is to practice integrating navigation and manipulation
 - [Mobile Manipulation (Gazebo + Console + Rviz)](https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation)
 - [Documentation](https://github.com/predator4hack/RoboticsAcademy/tree/mobile_manipulation_doc)
 
-### Improvements
+### TODO
 
 - Need to resolve : `ERROR: Cannot locate node of type [scan_unifier_node] in package [cob_scan_unifier]. Make sure file exists in package path and permission is set to executable (chmod +x)`
 
     Steps taken to resolve this issue:
-    - According to this [post](https://github.com/microsoft/AirSim/issues/2591), the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn't seem to work.
-    - Directly installed cob driver - Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.
-    - Added the path of this driver directly in the enviornemnt variable but this didn't worked.
+    - **Created ROS Entrypoint** : According to this [post](https://github.com/microsoft/AirSim/issues/2591), the reason behind this error is sourcing each of the docker sub-shell. So I created a ROS EntryPoint in order swource every subshell. But this doesn't seem to work.
+    - **Installed COB driver** : Because the cob driver used in our Industrial Robots is custom and has some distinct functionalities than the standard driver, it does not appear to operate.
+    - **Explicitly added paths in the enviornment variables** : Added the path of this driver directly in the enviornemnt variable but this didn't worked.
 
 - 
 
 - Need to resolove : `Failed to load plugin libgazebo_ros_moveit_planning_scene.so: libgazebo_ros_moveit_planning_scene.so: cannot open shared object file: No such file or directory`
 
     Steps taken to resolve this issue:
-    - In this pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).
+    - **Added libgazebo_ros_moveit_planning_scene from a git repo** : In [this](https://github.com/ros-simulation/gazebo_ros_pkgs/pull/713) pull request, the libgazebo_ros_moveit_planning_scene was integrated in kinetic devel, so I tried to add the same plugin to our workspace. This error was resolved but it came with some other errors(Refer week 10 blog).
+
+### Future Works
+
+- Migrate exercise to RADI 3
+- Integrate RQT window in the exercise
 
 ### Simulation
 
